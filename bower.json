@@ -1,8 +1,8 @@
 {
-  "name": "NotelySeed",
-  "description": "A starter project for an AngularJS 1.5 note-taking app.",
+  "name": "Meganote",
+  "description": "A note-taking app.",
   "version": "0.6.0",
-  "homepage": "git@github.com/getfretless/notely-seed.git",
+  "homepage": "git@github.com/xternbootcamp16/meganote.git",
   "license": "MIT",
   "private": false,
   "dependencies": {
