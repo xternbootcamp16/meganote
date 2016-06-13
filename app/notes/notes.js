@@ -17,6 +17,5 @@ angular.module('meganote.notes', [
   });
 })
 
-.controller('NotesController', function($scope) {
-  $scope.message = "Separate controller";
+.controller('NotesController', function() {
 });
