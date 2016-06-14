@@ -4,6 +4,7 @@
     .config(notesConfig)
     .controller('NotesController', NotesController);
 
+  notesConfig.$inject = ['$stateProvider'];
   function notesConfig($stateProvider) {
     $stateProvider
 
@@ -19,6 +20,7 @@
       });
   }
 
+  NotesController.$inject = ['$scope'];
   function NotesController($scope) {
     $scope.notes = [];
     $scope.note = { title: '', body: '' };
