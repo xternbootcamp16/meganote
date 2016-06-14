@@ -39,5 +39,9 @@
     $scope.edit = function(note) {
       $scope.note = note;
     };
+
+    $scope.clearForm = function() {
+      $scope.note = { title: '', body: '' };
+    };
   }
 })();
