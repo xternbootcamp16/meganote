@@ -19,9 +19,11 @@
     });
   }
 
-  NotesController.$inject = ['$state', '$scope'];
-  function NotesController($state, $scope) {
+  NotesController.$inject = ['$state', '$scope', 'NotesService'];
+  function NotesController($state, $scope, NotesService) {
     $state.go('notes.form');
+
+    NotesService.getNotes();
 
     $scope.notes = [];
     $scope.note = { title: '', body: '' };
