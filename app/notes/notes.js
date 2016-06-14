@@ -32,7 +32,7 @@
     $scope.note = { title: '', body: '' };
 
     $scope.save = function() {
-      $scope.notes.push($scope.note);
+      NotesService.create($scope.note);
       $scope.note = { title: '', body: '' };
     };
 
