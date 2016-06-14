@@ -8,10 +8,10 @@
     $stateProvider
 
     .state('notes', {
-        url: '/notes',
-        templateUrl: 'notes/notes.html',
-        controller: 'NotesController'
-      })
+      url: '/notes',
+      templateUrl: 'notes/notes.html',
+      controller: 'NotesController'
+    })
 
     .state('notes.form', {
       url: '/:noteId',
@@ -33,10 +33,10 @@
     $scope.save = function() {
       $scope.notes.push($scope.note);
       $scope.note = { title: '', body: '' };
-    }
+    };
 
     $scope.edit = function(note) {
       $scope.note = note;
-    }
+    };
   }
 }());
