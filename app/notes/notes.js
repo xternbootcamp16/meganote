@@ -28,15 +28,19 @@
         $scope.notes = NotesService.notes;
       });
 
-    $scope.note = { title: '', body_html: '' };
+    $scope.clearForm = function() {
+      $scope.note = { title: '', body_html: '' };
+    };
 
     $scope.save = function() {
       NotesService.create($scope.note);
-      $scope.note = { title: '', body_html: '' };
+      $scope.clearForm();
     };
 
     $scope.edit = function(note) {
       $scope.note = note;
     };
+
+    $scope.clearForm();
   }
 }());
