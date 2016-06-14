@@ -6,11 +6,16 @@
   function NotesService($http) {
     var service = this;
 
+    service.notes = [];
+
     service.getNotes = function() {
-      $http.get('https://meganote.herokuapp.com/notes')
-        .then(function(res) {
-          console.log(res.data);
-        });
+      var notesPromise = $http.get('https://meganote.herokuapp.com/notes');
+
+      notesPromise.then(function(res) {
+        service.notes = res.data;
+      });
+
+      return notesPromise;
     };
   }
 })();
