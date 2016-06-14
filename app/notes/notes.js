@@ -28,11 +28,11 @@
         $scope.notes = NotesService.notes;
       });
 
-    $scope.note = { title: '', body: '' };
+    $scope.note = { title: '', body_html: '' };
 
     $scope.save = function() {
-      $scope.notes.push($scope.note);
-      $scope.note = { title: '', body: '' };
+      NotesService.create($scope.note);
+      $scope.note = { title: '', body_html: '' };
     };
 
     $scope.edit = function(note) {
