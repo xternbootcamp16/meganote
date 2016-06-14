@@ -8,8 +8,8 @@
 
     service.getNotes = function() {
       $http.get('https://meganote.herokuapp.com/notes')
-        .success(function(notes) {
-          console.log(notes);
+        .then(function(res) {
+          console.log(res.data);
         });
     };
   }
