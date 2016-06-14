@@ -17,5 +17,12 @@ angular.module('meganote.notes', [
   });
 })
 
-.controller('NotesController', function() {
+.controller('NotesController', function($scope) {
+  $scope.notes = [];
+  $scope.note = { title: '', body: '' };
+
+  $scope.save = function() {
+    $scope.notes.push($scope.note);
+    $scope.note = { title: '', body: '' };
+  }
 });
