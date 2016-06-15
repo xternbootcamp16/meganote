@@ -18,7 +18,7 @@
     <input
       type="submit"
       name="commit"
-      value="Save"
+      value="{{ note._id ? 'Update Note' : 'Create Note' }}"
       class="btn btn-default">
   </div>
 </form>
