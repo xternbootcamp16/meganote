@@ -5,7 +5,7 @@
         New Note
       </button>
       <ul id="notes">
-        <li ng-repeat="note in notes track by $index" ng-click="edit(note)">
+        <li ng-repeat="note in notes | orderBy: '-updated_at' track by $index" ng-click="edit(note)">
           {{ note.title }}
         </li>
       </ul>
