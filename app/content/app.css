@@ -53,6 +53,8 @@ input#note_title {
     outline: none; }
 
 ul#notes {
+  overflow-y: scroll;
+  height: calc(100vh - 110px);
   list-style: none;
   margin-top: 1em;
   padding: 0;
