@@ -108,3 +108,18 @@ span.login {
 
 .ta-editor {
   margin-top: 0.5em; }
+
+body .alert.alert-success {
+  padding: 0;
+  margin: 0;
+  display: inline-block;
+  border: none;
+  position: absolute;
+  right: 1rem;
+  bottom: 0;
+  color: #d3d3d3;
+  background-color: inherit;
+}
+body .alert-danger {
+  margin-top: 1rem;
+}

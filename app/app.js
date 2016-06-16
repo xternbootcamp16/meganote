@@ -1,6 +1,7 @@
 (function() {
   var app = angular.module('meganote', [
     'ui.router',
+    'ngFlash',
     'meganote.notes'
   ]);
 
