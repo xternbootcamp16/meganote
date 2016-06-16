@@ -19,8 +19,8 @@
     });
   }
 
-  NotesController.$inject = ['$state', '$scope', 'NotesService'];
-  function NotesController($state, $scope, NotesService) {
+  NotesController.$inject = ['$state', '$scope', 'Flash', 'NotesService'];
+  function NotesController($state, $scope, Flash, NotesService) {
     $state.go('notes.form');
 
     NotesService.getNotes()
@@ -34,12 +34,17 @@
 
     $scope.save = function() {
       if ($scope.note._id) {
-        NotesService.update($scope.note);
+        NotesService.update($scope.note)
+          .then(function(res) {
+            $scope.note = res.data.note;
+            Flash.create('success', res.data.message);
+          });
       }
       else {
         NotesService.create($scope.note)
           .then(function(res) {
             $scope.note = res.data.note;
+            Flash.create('success', res.data.message);
           });
       }
     };
