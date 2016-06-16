@@ -18,7 +18,13 @@
     <input
       type="submit"
       name="commit"
-      value="Save"
+      value="{{ note._id ? 'Update Note' : 'Create Note' }}"
       class="btn btn-default">
+
+    <a ng-click="delete()" ng-show="note._id"><i class="fa fa-trash-o fa-lg"></i></a>
+
+    <flash-message
+      duration="3000"
+      show-close="false"></flash-message>
   </div>
 </form>
