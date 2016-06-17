@@ -10,7 +10,10 @@
     .state('notes', {
       url: '/notes',
       templateUrl: 'notes/notes.html',
-      controller: 'NotesController'
+      controller: 'NotesController',
+      resolve: {
+        notesLoaded: notesLoaded
+      }
     })
 
     .state('notes.form', {
@@ -20,50 +23,13 @@
     });
   }
 
-  NotesController.$inject = ['$scope', 'Flash', 'NotesService'];
-  function NotesController($scope, Flash, NotesService) {
+  notesLoaded.$inject = ['NotesService'];
+  function notesLoaded(NotesService) {
+    return NotesService.getNotes();
+  }
 
-    NotesService.getNotes()
-      .then(function() {
-        $scope.notes = NotesService.notes;
-      });
-
-    $scope.clearForm = function() {
-      $scope.note = { title: '', body_html: '' };
-    };
-
-    $scope.save = function() {
-      if ($scope.note._id) {
-        NotesService.update($scope.note)
-          .then(
-            function(res) {
-              $scope.note = res.data.note;
-              Flash.create('success', res.data.message);
-            },
-            function() {
-              Flash.create('danger', 'Oops! Something went wrong.');
-            });
-      }
-      else {
-        NotesService.create($scope.note)
-          .then(
-            function(res) {
-              $scope.note = res.data.note;
-              Flash.create('success', res.data.message);
-            },
-            function() {
-              Flash.create('danger', 'Oops! Something went wrong.');
-            });
-      }
-    };
-
-    $scope.delete = function() {
-      NotesService.delete($scope.note)
-        .then(function() {
-          $scope.clearForm();
-        });
-    };
-
-    $scope.clearForm();
+  NotesController.$inject = ['$scope', 'NotesService'];
+  function NotesController($scope, NotesService) {
+    $scope.notes = NotesService.notes;
   }
 }());
