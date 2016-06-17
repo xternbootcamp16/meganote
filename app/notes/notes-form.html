@@ -8,11 +8,17 @@
       ng-model="note.title">
   </p>
   <p>
-    <textarea
+    <text-angular
       name="body_html"
       placeholder="Just start typing..."
       ng-model="note.body_html"
-      ></textarea>
+      ta-toolbar="[
+        ['bold', 'italics', 'underline'],
+        ['ul', 'ol', 'indent', 'outdent'],
+        ['insertLink'],
+        ['html']
+      ]"
+      ></text-angular>
   </p>
   <div class="form-actions">
     <input
