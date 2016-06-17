@@ -10,22 +10,28 @@
     .state('notes', {
       url: '/notes',
       templateUrl: 'notes/notes.html',
-      controller: 'NotesController'
+      controller: 'NotesController',
+      resolve: {
+        notesLoaded: notesLoaded
+      }
     })
 
     .state('notes.form', {
       url: '/:noteId',
-      templateUrl: 'notes/notes-form.html'
+      templateUrl: 'notes/notes-form.html',
+      controller: 'NotesFormController'
     });
+  }
+
+  notesLoaded.$inject = ['NotesService'];
+  function notesLoaded(NotesService) {
+    return NotesService.getNotes();
   }
 
   NotesController.$inject = ['$scope', 'Flash', 'NotesService'];
   function NotesController($scope, Flash, NotesService) {
 
-    NotesService.getNotes()
-      .then(function() {
-        $scope.notes = NotesService.notes;
-      });
+    $scope.notes = NotesService.notes;
 
     $scope.clearForm = function() {
       $scope.note = { title: '', body_html: '' };
