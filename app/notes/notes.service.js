@@ -9,7 +9,7 @@
     service.notes = [];
 
     service.getNotes = function() {
-      var notesPromise = $http.get('https://meganote.herokuapp.com/notes');
+      var notesPromise = $http.get('http://localhost:3030/');
 
       notesPromise.then(function(res) {
         service.notes = res.data;
@@ -19,7 +19,7 @@
     };
 
     service.create = function(note) {
-      var notesPromise = $http.post('https://meganote.herokuapp.com/notes', {
+      var notesPromise = $http.post('http://localhost:3030/', {
         note: note
       });
 
@@ -31,7 +31,7 @@
     };
 
     service.update = function(note) {
-      var notesPromise = $http.put('https://meganote.herokuapp.com/notes/' + note._id, {
+      var notesPromise = $http.put('http://localhost:3030/' + note._id, {
         note: note
       });
 
@@ -44,7 +44,7 @@
     };
 
     service.delete = function(note) {
-      var notesPromise = $http.delete('https://meganote.herokuapp.com/notes/' + note._id);
+      var notesPromise = $http.delete('http://localhost:3030/' + note._id);
 
       notesPromise.then(function(res) {
         service.removeById(res.data.note._id);
