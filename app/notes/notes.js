@@ -15,17 +15,17 @@
 
     .state('notes.form', {
       url: '/:noteId',
-      templateUrl: 'notes/notes-form.html'
+      templateUrl: 'notes/notes-form.html',
+      controller: 'NotesFormController'
     });
   }
 
-  NotesController.$inject = ['$state', '$scope', 'Flash', 'NotesService'];
-  function NotesController($state, $scope, Flash, NotesService) {
+  NotesController.$inject = ['$scope', 'Flash', 'NotesService'];
+  function NotesController($scope, Flash, NotesService) {
 
     NotesService.getNotes()
       .then(function() {
         $scope.notes = NotesService.notes;
-        $scope.note = NotesService.find($state.params.noteId);
       });
 
     $scope.clearForm = function() {
@@ -64,6 +64,6 @@
         });
     };
 
-    // $scope.clearForm();
+    $scope.clearForm();
   }
 }());
