@@ -5,9 +5,11 @@
         New Note
       </button>
       <ul id="notes">
-        <li ng-repeat="note in notes | orderBy: '-updated_at' track by $index" ng-click="edit(note)">
-          <div class="note-title">{{ note.title }}</div>
-          <div class="note-body" ng-bind-html="note.body_html"></div>
+        <li ng-repeat="note in notes | orderBy: '-updated_at' track by $index">
+          <a class="note" ui-sref="notes.form({ noteId: note._id })">
+            <div class="note-title">{{ note.title }}</div>
+            <div class="note-body" ng-bind-html="note.body_html"></div>
+          </a>
         </li>
       </ul>
     </nav>
