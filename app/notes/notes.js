@@ -19,10 +19,8 @@
     });
   }
 
-  NotesController.$inject = ['$state', '$scope', 'Flash', 'NotesService'];
-  function NotesController($state, $scope, Flash, NotesService) {
-
-    $state.go('notes.form');
+  NotesController.$inject = ['$scope', 'Flash', 'NotesService'];
+  function NotesController($scope, Flash, NotesService) {
 
     NotesService.getNotes()
       .then(function() {

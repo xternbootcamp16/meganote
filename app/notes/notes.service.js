@@ -60,5 +60,13 @@
         }
       }
     };
+
+    service.find = function(id) {
+      for (var i=0; i < service.notes.length; i++) {
+        if (service.notes[i]._id === id) {
+          return angular.copy(service.notes[i]);
+        }
+      }
+    };
   }
 }());
