@@ -2,15 +2,15 @@
   angular.module('meganote.notes')
     .controller('NotesFormController', NotesFormController);
 
-  NotesFormController.$inject = ['$state', '$scope', 'Flash', 'NotesService'];
-  function NotesFormController($state, $scope, Flash, NotesService) {
+  NotesFormController.$inject = ['$state', '$scope', 'flashService', 'NotesService'];
+  function NotesFormController($state, $scope, flashService, NotesService) {
     var vm = this;
     vm.clearForm = clearForm;
     vm.save = save;
     vm.delete = deleteNote;
     $scope.note = NotesService.find($state.params.noteId);
     /////////////////////////////FUNCTIONS BELOW/////////////////
-    
+
     function clearForm() {
       $scope.note = { title: '', body_html: '' };
     }
@@ -21,10 +21,10 @@
             .then(
               function(res) {
                 $scope.note = res.data.note;
-                Flash.create('success', res.data.message);
+                flashService.success(res.data.message);//Flash.create('success', res.data.message);
               },
               function() {
-                Flash.create('danger', 'Oops! Something went wrong.');
+                flashService.failure();//Flash.create('danger', 'Oops! Something went wrong.');
               });
       }
       else {
@@ -32,10 +32,10 @@
             .then(
               function(res) {
                 $scope.note = res.data.note;
-                Flash.create('success', res.data.message); //MIGRATE FLASH STUFF TO SERVICE
+                flashService.success(res.data.message);//Flash.create('success', res.data.message); //MIGRATE FLASH STUFF TO SERVICE
               },
               function() {
-                Flash.create('danger', 'Oops! Something went wrong.');
+                flashService.failure();//  Flash.create('danger', 'Oops! Something went wrong.');
               });
       }
     }
