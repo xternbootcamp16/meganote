@@ -3,7 +3,7 @@
     'ui.router',
     'ngFlash',
     'textAngular',
-    'meganote.notes'
+    'meganote.noteConst'
   ]);
 
   function config($urlRouterProvider) {
