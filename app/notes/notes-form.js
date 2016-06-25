@@ -10,6 +10,7 @@
     vm.delete = deleteNote;
     $scope.note = NotesService.find($state.params.noteId);
     /////////////////////////////FUNCTIONS BELOW/////////////////
+    
     function clearForm() {
       $scope.note = { title: '', body_html: '' };
     }
