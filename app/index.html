@@ -30,6 +30,7 @@
     </div>
 
 
+    <!-- Third party scripts -->
     <script src="bower_components/jquery/dist/jquery.min.js"></script>
     <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
     <script src="bower_components/angular-loader/angular-loader.min.js"></script>
@@ -40,9 +41,30 @@
     <script src="bower_components/textAngular/dist/textAngular-sanitize.min.js"></script>
     <script src="bower_components/textAngular/dist/textAngular.min.js"></script>
 
-    <script src="app.js"></script>
-    <script src="notes/notes.js"></script>
-    <script src="notes/notes-form.js"></script>
-    <script src="notes/notes.service.js"></script>
+    <!-- Firebase third party services -->
+    <script src="https://www.gstatic.com/firebasejs/3.0.4/firebase.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angularFire/2.0.1/angularfire.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.3.1/angular-ui-router.min.js"></script>
+
+
+    <!-- Main app module -->
+    <script src="app/app.module.js"></script>
+
+    <!-- Core module -->
+    <script src="app/core/core.module.js"></script>
+    <script src="app/core/note.service.js"></script>
+    <script src="app/core/firebaseData.service.js"></script>
+
+    <!-- Layout module -->
+    <script src="app/layout/layout.module.js"></script>
+
+    <!-- noteList module -->
+    <script src="notes/noteList.module.js"></script>
+    <script src="notes/config.route.js"></script>
+    <script src="notes/notelist.controller.js"></script>
+
+    <!-- Firebase app configuration -->
+    <script src="app/firebaseConfig.js"></script>
+
   </body>
 </html>
