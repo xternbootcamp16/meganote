@@ -3,22 +3,28 @@
 
   angular
     .module('meganote.core')
-    .factory('noteService', noteService);
+    .factory('noteService', noteService); // Define a new service - pass service name and then the service function
 
-  noteService.$inject = ['$firebaseArray', 'firebaseDataService'];
+  // Inject your dependicices using $inject
+  noteService.$inject = ['$firebaseArray', 'firebaseDataService']; // Only AngularJS services start with $.
 
-  function noteService() {
+  function noteService($firebaseArray, firebaseDataService) {
     var service = {
-      note: note
+      newNote: newNote,
+      notes: notes
     };
 
     return service;
 
     ///////////////
 
-    function note() {
+    function newNote() {
       this.title = '';
       this.body = '';
+    }
+
+    function notes(){
+      return $firebaseArray(firebaseDataService.notes);
     }
   }
 })();
