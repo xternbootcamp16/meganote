@@ -27,7 +27,7 @@
           .then(
             function(res) {
               $scope.note = res.data.note;
-              Flash.create('success', res.data.message);
+              Flash.create('success', res.data.message); //MIGRATE FLASH STUFF TO SERVICE
             },
             function() {
               Flash.create('danger', 'Oops! Something went wrong.');

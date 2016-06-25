@@ -2,13 +2,13 @@
   angular.module('meganote.notes')
     .service('NotesService', NotesService);
 
-  NotesService.$inject = ['$http'];
-  function NotesService($http) {
+  NotesService.$inject = ['$http', 'noteConstants'];
+  function NotesService($http, noteConstants) {
     var service = this;
     service.notes = [];
 
     service.getNotes = function() {
-      var notesPromise = $http.get('http://localhost:3030/');
+      var notesPromise = $http.get(noteConstants.apiUrl);
 
       notesPromise.then(function(res) {
         service.notes = res.data;
