@@ -1,6 +1,6 @@
 (function() {
   angular.module('meganote.notes')
-    .service('NotesService', NotesService);
+    .factory('NotesService', NotesService);
 
   NotesService.$inject = ['$http', 'noteConstants'];
   function NotesService($http, noteConstants) {
