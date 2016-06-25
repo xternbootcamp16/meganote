@@ -1,6 +1,7 @@
 (function(){
   'use strict';
-  angular.module('meganote.noteConst').factory('noteConstants', noteConstants);
+  angular.module('meganote.noteConst',[])
+  .factory('noteConstants', noteConstants);
 
   function noteConstants(){
     var service = {

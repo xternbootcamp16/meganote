@@ -5,9 +5,15 @@
   NotesService.$inject = ['$http', 'noteConstants'];
   function NotesService($http, noteConstants) {
     var service = this;
+    service.getNotes = getNotes;
+    service.create = create;
+    service.update = update;
+    service.delete = deleteNote;
+    service.removeById = removeById;
+    service.find = find;
     service.notes = [];
 
-    service.getNotes = function() {
+    function getNotes() {
       var notesPromise = $http.get(noteConstants.apiUrl);
 
       notesPromise.then(function(res) {
@@ -15,9 +21,9 @@
       });
 
       return notesPromise;
-    };
+    }
 
-    service.create = function(note) {
+    function create(note) {
       var notesPromise = $http.post(noteConstants.apiUrl, {
         note: note
       });
@@ -27,9 +33,9 @@
       });
 
       return notesPromise;
-    };
+    }
 
-    service.update = function(note) {
+    function update(note) {
       var notesPromise = $http.put(noteConstants.apiUrl + note._id, {
         note: note
       });
@@ -40,9 +46,9 @@
       });
 
       return notesPromise;
-    };
+    }
 
-    service.delete = function(note) {
+    function deleteNote(note) {
       var notesPromise = $http.delete(noteConstants.apiUrl + note._id);
 
       notesPromise.then(function(res) {
@@ -50,22 +56,22 @@
       });
 
       return notesPromise;
-    };
+    }
 
-    service.removeById = function(id) {
+    function removeById(id) {
       for (var i=0; i < service.notes.length; i++) {
         if (service.notes[i]._id === id) {
           return service.notes.splice(i, 1);
         }
       }
-    };
+    }
 
-    service.find = function(id) {
+    function find(id) {
       for (var i=0; i < service.notes.length; i++) {
         if (service.notes[i]._id === id) {
           return angular.copy(service.notes[i]);
         }
       }
-    };
+    }
   }
 }());
