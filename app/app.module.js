@@ -8,7 +8,8 @@
 
       // Custom modules
       'meganote.notes',
-      'meganote.notesForm'
+      'meganote.notesForm',
+      'meganote.core'
     ])
     .config(configFunction);
 
