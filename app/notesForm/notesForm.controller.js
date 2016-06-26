@@ -10,12 +10,15 @@
     var vm = this;
 
     vm.note = NotesService.find($state.params.noteId);
+    vm.clearForm = clearForm;
+    vm.save = save;
+    vm.deleteNote = deleteNote;
 
-    vm.clearForm = function() {
+    function clearForm() {
       vm.note = { title: '', body_html: '' };
-    };
+    }
 
-    vm.save = function() {
+    function save() {
       if (vm.note._id) {
         NotesService.update(vm.note)
           .then(
@@ -38,13 +41,13 @@
               Flash.create('danger', 'Oops! Something went wrong.');
             });
       }
-    };
+    }
 
-    vm.delete = function() {
+    function deleteNote() {
       NotesService.delete(vm.note)
         .then(function() {
           vm.clearForm();
         });
-    };
+    }
   }
 })();
