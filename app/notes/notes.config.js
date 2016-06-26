@@ -17,13 +17,6 @@
       resolve: {
         notesLoaded: notesLoaded
       }
-    })
-
-    .state('notes.form', {
-      url: '/:noteId',
-      templateUrl: 'notesForm/notesForm.html',
-      controller: 'NotesFormController',
-      controllerAs: 'vm'
     });
   }
 
