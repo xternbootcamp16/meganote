@@ -1,6 +1,6 @@
 (function() {
   'use strict';
-  
+
   angular
     .module('meganote.notes')
     .service('NotesService', NotesService);
@@ -71,4 +71,4 @@
       }
     };
   }
-}());
+})();

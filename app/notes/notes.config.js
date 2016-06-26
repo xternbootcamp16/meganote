@@ -2,9 +2,8 @@
   'use strict';
 
   angular
-    .module('meganote.notes', ['ui.router'])
-    .config(notesConfig)
-    .controller('NotesController', NotesController);
+    .module('meganote.notes')
+    .config(notesConfig);
 
   notesConfig.$inject = ['$stateProvider'];
   function notesConfig($stateProvider) {
@@ -14,6 +13,7 @@
       url: '/notes',
       templateUrl: 'notes/notes.html',
       controller: 'NotesController',
+      controllerAs: 'vm',
       resolve: {
         notesLoaded: notesLoaded
       }
@@ -22,7 +22,8 @@
     .state('notes.form', {
       url: '/:noteId',
       templateUrl: 'notes-form/notes-form.html',
-      controller: 'NotesFormController'
+      controller: 'NotesFormController',
+      controllerAs: 'vm'
     });
   }
 
@@ -30,9 +31,4 @@
   function notesLoaded(NotesService) {
     return NotesService.getNotes();
   }
-
-  NotesController.$inject = ['$scope', 'NotesService'];
-  function NotesController($scope, NotesService) {
-    $scope.notes = NotesService.notes;
-  }
-}());
+})();

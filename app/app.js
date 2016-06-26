@@ -3,9 +3,14 @@
 
   angular
     .module('meganote', [
+      // Angular modules
       'ui.router',
+
+      // Third-party modules
       'ngFlash',
       'textAngular',
+
+      // Custom modules
       'meganote.notes'
     ])
     .config(configFunction);

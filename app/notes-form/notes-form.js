@@ -1,5 +1,8 @@
 (function() {
-  angular.module('meganote.notes')
+  'use strict';
+  
+  angular
+    .module('meganote.notes')
     .controller('NotesFormController', NotesFormController);
 
   NotesFormController.$inject = ['$state', '$scope', 'Flash', 'NotesService'];
@@ -42,4 +45,4 @@
         });
     };
   }
-}());
+})();
