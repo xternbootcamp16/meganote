@@ -12,7 +12,8 @@
         parent: 'notes',
         url: '/:notesId',
         templateUrl: 'notesForm/notesForm.html',
-        controller: 'NotesFormController'
+        controller: 'NotesFormController',
+        controllerAs: 'vm'
       });
   }
 })();

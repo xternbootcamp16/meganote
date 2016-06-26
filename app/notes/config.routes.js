@@ -11,6 +11,7 @@
       url: '/notes',
       templateUrl: 'notes/notes.html',
       controller: 'NotesController',
+      controllerAs: 'vm',
       resolve: {
         notesLoaded: notesLoaded
       }
