@@ -8,16 +8,15 @@
   notesConfig.$inject = ['$stateProvider'];
   function notesConfig($stateProvider) {
     $stateProvider
-
-    .state('notes', {
-      url: '/notes',
-      templateUrl: 'notes/notes.html',
-      controller: 'NotesController',
-      controllerAs: 'vm',
-      resolve: {
-        notesLoaded: notesLoaded
-      }
-    });
+      .state('notes', {
+        url: '/notes',
+        templateUrl: 'notes/notes.html',
+        controller: 'NotesController',
+        controllerAs: 'vm',
+        resolve: {
+          notesLoaded: notesLoaded
+        }
+      });
   }
 
   notesLoaded.$inject = ['NotesService'];
