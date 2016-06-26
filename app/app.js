@@ -1,10 +1,14 @@
 (function() {
   angular
     .module('meganote', [
+      // Angular modules
       'ui.router',
       'ngFlash',
       'textAngular',
-      'meganote.notes'
+
+      // Custom modules
+      'meganote.notes',
+      'meganote.notesForm'
     ])
     .config(configFunction);
 
