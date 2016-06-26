@@ -1,5 +1,8 @@
 (function() {
-  angular.module('meganote.notes', ['ui.router'])
+  'use strict';
+
+  angular
+    .module('meganote.notes', ['ui.router'])
     .config(notesConfig)
     .controller('NotesController', NotesController);
 
@@ -18,7 +21,7 @@
 
     .state('notes.form', {
       url: '/:noteId',
-      templateUrl: 'notes/notes-form.html',
+      templateUrl: 'notes-form/notes-form.html',
       controller: 'NotesFormController'
     });
   }

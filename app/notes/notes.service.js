@@ -1,5 +1,8 @@
 (function() {
-  angular.module('meganote.notes')
+  'use strict';
+  
+  angular
+    .module('meganote.notes')
     .service('NotesService', NotesService);
 
   NotesService.$inject = ['$http'];
