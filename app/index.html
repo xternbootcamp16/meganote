@@ -17,15 +17,7 @@
   <body>
 
     <div class="container wrap">
-      <div class="row">
-        <div class="col-xs-12">
-          <header>
-            <div class="well">
-              Meganote
-            </div>
-          </header>
-        </div>
-      </div>
+      <div my-header></div>
       <div ui-view></div>
     </div>
 
@@ -42,6 +34,10 @@
 
     <!-- Main app module -->
     <script src="app.js"></script>
+
+    <!-- Header module -->
+    <script src="layout/layout.module.js"></script>
+    <script src="layout/header.directive.js"></script>
 
     <!-- Notes module -->
     <script src="notes/notes.module.js"></script>

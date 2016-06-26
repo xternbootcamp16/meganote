@@ -11,7 +11,8 @@
       'textAngular',
 
       // Custom modules
-      'meganote.notes'
+      'meganote.notes',
+      'meganote.layout'
     ])
     .config(configFunction);
 
