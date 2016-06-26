@@ -21,7 +21,7 @@
 
     .state('notes.form', {
       url: '/:noteId',
-      templateUrl: 'notes-form/notes-form.html',
+      templateUrl: 'notesForm/notesForm.html',
       controller: 'NotesFormController',
       controllerAs: 'vm'
     });
