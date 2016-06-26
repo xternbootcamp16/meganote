@@ -14,13 +14,13 @@
       resolve: {
         notesLoaded: notesLoaded
       }
-    })
-
-    .state('notes.form', {
-      url: '/:noteId',
-      templateUrl: 'notes/notes-form.html',
-      controller: 'NotesFormController'
     });
+
+    // .state('notes.form', {
+    //   url: '/:noteId',
+    //   templateUrl: 'notes/notes-form.html',
+    //   controller: 'NotesFormController'
+    // });
   }
 
   notesLoaded.$inject = ['NotesService'];
