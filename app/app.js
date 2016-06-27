@@ -10,7 +10,8 @@
     'textAngular',
     
     //Main modules
-    'meganote.notes'
+    'meganote.notes',
+    'meganote.form'
   ]);
 
   function config($urlRouterProvider) {
