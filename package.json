@@ -10,7 +10,7 @@
     "http-server": "^0.9.0"
   },
   "scripts": {
-    "start": "http-server app -a localhost -p 8000 -c-1",
+    "start": "http-server app -a localhost -p 3030 -c-1",
     "prestart": "npm install",
     "postinstall": "bower install",
     "preupdate-webdriver": "npm install"
