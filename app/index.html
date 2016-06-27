@@ -17,19 +17,11 @@
   <body>
 
     <div class="container wrap">
-      <div class="row">
-        <div class="col-xs-12">
-          <header>
-            <div class="well">
-              Meganote
-            </div>
-          </header>
-        </div>
-      </div>
+      <div my-header></div>
       <div ui-view></div>
     </div>
 
-
+    <!-- Third-party scripts -->
     <script src="bower_components/jquery/dist/jquery.min.js"></script>
     <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
     <script src="bower_components/angular-loader/angular-loader.min.js"></script>
@@ -40,9 +32,23 @@
     <script src="bower_components/textAngular/dist/textAngular-sanitize.min.js"></script>
     <script src="bower_components/textAngular/dist/textAngular.min.js"></script>
 
+    <!-- Main app module -->
     <script src="app.js"></script>
-    <script src="notes/notes.js"></script>
-    <script src="notes/notes-form.js"></script>
+
+    <!-- Header module -->
+    <script src="layout/layout.module.js"></script>
+    <script src="layout/header.directive.js"></script>
+
+    <!-- Notes module -->
+    <script src="notes/notes.module.js"></script>
+    <script src="notes/notes.config.js"></script>
     <script src="notes/notes.service.js"></script>
+    <script src="notes/notes.database.js"></script>
+    <script src="notes/notes.controller.js"></script>
+
+    <!-- Notes form module -->
+    <script src="notesForm/notesForm.module.js"></script>
+    <script src="notesForm/notesForm.config.js"></script>
+    <script src="notesForm/notesForm.controller.js"></script>
   </body>
 </html>
