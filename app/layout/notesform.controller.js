@@ -8,18 +8,23 @@
   NotesformController.$inject = ['$state', '$scope', 'Flash', 'NotesService'];
 
   function NotesformController($state, $scope, Flash, NotesService) {
-    $scope.note = NotesService.find($state.params.noteId);
+    var vm = $scope;
+    vm.note = note
+    note = NotesService.find($state.params.noteId);
+    vm.clearForm = clearForm;
+    vm.save = save;
+    vm.delete = delete;
 
-    $scope.clearForm = function() {
-      $scope.note = { title: '', body_html: '' };
+    function clearForm() {
+      note = { title: '', body_html: '' };
     };
 
-    $scope.save = function() {
-      if ($scope.note._id) {
-        NotesService.update($scope.note)
+    function save() {
+      if (note._id) {
+        NotesService.update(note)
           .then(
             function(res) {
-              $scope.note = res.data.note;
+              note = res.data.note;
               Flash.create('success', res.data.message);
             },
             function() {
@@ -27,10 +32,10 @@
             });
       }
       else {
-        NotesService.create($scope.note)
+        NotesService.create(note)
           .then(
             function(res) {
-              $scope.note = res.data.note;
+              note = res.data.note;
               Flash.create('success', res.data.message);
             },
             function() {
@@ -39,10 +44,10 @@
       }
     };
 
-    $scope.delete = function() {
-      NotesService.delete($scope.note)
+    function delete() {
+      NotesService.delete(note)
         .then(function() {
-          $scope.clearForm();
+          vm.clearForm();
         });
     };
   }
