@@ -1,48 +1,55 @@
 <!DOCTYPE html>
-<!--[if lt IE 7]>      <html lang="en" ng-app="meganote" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html lang="en" ng-app="meganote" class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html lang="en" ng-app="meganote" class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!-->
-<html lang="en" ng-app="meganote" ng-strict-di class="no-js"> <!--<![endif]-->
+<html ng-app="megaNote">
   <head>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title ng-bind="$state.current.name + ' - Meganote'">Meganote</title>
+    <title>Meganote</title>
     <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Merriweather:400,300,300italic|Oxygen:400,300,700">
-    <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.css">
-    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
-    <link rel="stylesheet" href="bower_components/textAngular/dist/textAngular.css">
-    <link rel="stylesheet" href="content/app.css" charset="utf-8">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.2.3/foundation.css">
+    <link rel="stylesheet" href="content/app.css">
   </head>
   <body>
 
-    <div class="container wrap">
-      <div class="row">
-        <div class="col-xs-12">
-          <header>
-            <div class="well">
-              Meganote
-            </div>
-          </header>
-        </div>
-      </div>
-      <div ui-view></div>
-    </div>
+    <cr-nav></cr-nav>
+    <div ui-view class="row" id="main"></div>
+
+    <!-- Third party scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.2.3/foundation.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.7/angular.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.3.1/angular-ui-router.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/3.0.4/firebase.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angularFire/2.0.1/angularfire.min.js"></script>
+
+    <!-- Main App Module-->
+    <script src="app.module.js"></script>
+
+    <!-- Core module -->
+  <script src="core/core.module.js"></script>
+  <script src="core/note.service.js"></script>
+  <script src="core/firebaseData.service.js"></script>
+
+    <!-- Auth Module -->
+    <script src="auth/auth.module.js"></script>
+    <script src="auth/config.route.js"></script>
+    <script src="auth/auth.controller.js"></script>
+    <script src="auth/auth.service.js"></script>
+
+    <!-- Home Module -->
+    <script src="home/home.module.js"></script>
+    <script src="home/config.route.js"></script>
+
+    <!-- Layout Module -->
+    <script src="layout/layout.module.js"></script>
+    <script src="layout/navbar.directive.js"></script>
+    <script src="layout/noteForm.directive.js"></script> 
+
+    <!-- Notes Module -->
+    <script src="notes2/notes.module.js"></script>
+    <script src="notes2/config.route.js"></script>
+    <script src="notes2/notes.controller.js"></script>
 
 
-    <script src="bower_components/jquery/dist/jquery.min.js"></script>
-    <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-    <script src="bower_components/angular-loader/angular-loader.min.js"></script>
-    <script src="bower_components/angular/angular.js"></script>
-    <script src="bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
-    <script src="bower_components/angular-flash-alert/dist/angular-flash.js"></script>
-    <script src="bower_components/textAngular/dist/textAngular-rangy.min.js"></script>
-    <script src="bower_components/textAngular/dist/textAngular-sanitize.min.js"></script>
-    <script src="bower_components/textAngular/dist/textAngular.min.js"></script>
-
-    <script src="app.js"></script>
-    <script src="notes/notes.js"></script>
-    <script src="notes/notes-form.js"></script>
-    <script src="notes/notes.service.js"></script>
+    <!-- Firebase config -->
+    <script src="firebase.config.js"></script>
   </body>
 </html>

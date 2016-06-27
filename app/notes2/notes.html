@@ -1,0 +1,19 @@
+
+  <!-- Main Page Content and Sidebar -->
+  <div class="row">
+    <!-- Sidebar For Notes -->
+    <aside class="small-3 columns">
+      <h5>Categories</h5>
+      <ul class="side-nav" ng-repeat="note in vm.notes">
+        <li><a href="#">{{ note.title }}</a></li>
+      </ul>
+    </aside>
+    <!-- End Sidebar -->
+
+    <!--  Form Goes Here -->
+    <div class="large-9 columns" role="content">
+      <cr-noteform></cr-noteform>
+    </div>
+    <!-- End Main Content -->
+  </div>
+  <!-- End Main Content and Sidebar -->

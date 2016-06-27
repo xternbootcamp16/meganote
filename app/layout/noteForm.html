@@ -1,0 +1,7 @@
+<form ng-submit="vm.saveNote()">
+  <input type="text" name="title" id="note_title" placeholder="Title Your Note" ng-model="vm.newNote.title">
+  <div>
+    <input type="submit" name="commit" value="Update" class="button">
+    <a class="button" ng-click="vm.deleteNote()">Delete</a>
+  </div>
+</form>

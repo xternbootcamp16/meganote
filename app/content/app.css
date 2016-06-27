@@ -1,11 +1,47 @@
-body {
-  font-family: Oxygen, Helvetica, Arial, sans-serif; }
-
 h1, h2, h3, h4, h5 {
-font-family: Merriweather;
-font-weight: 300;
-color: #FE5F55; }
+font-family: Oxygen, Helvetica, Arial, sans-serif;
+color: #FE5F55;
+}
 
+.btn-register {
+  background-color: #FE5F55;
+}
+
+.btn-register:hover {
+  background-color: #fc8b85;
+}
+
+.btn-login {
+  background-color: #FE5F55;
+}
+
+.btn-login:hover {
+  background-color: #fc8b85;
+}
+
+.top-bar {
+  background-color: #FE5F55;
+}
+
+.nav-item-text {
+  background-color: #FE5F55;
+  color: white !important;
+
+}
+
+.menu-text {
+  background-color: #FE5F55;
+  color: white;
+}
+
+.register-form {
+  padding-top: 100px;
+}
+
+.login-form {
+  padding-top: 100px;
+}
+/**
 .container {
   width: 100% !important;
   padding-left: 0 !important;
@@ -122,4 +158,4 @@ body .alert.alert-success {
 }
 body .alert-danger {
   margin-top: 1rem;
-}
+}*/

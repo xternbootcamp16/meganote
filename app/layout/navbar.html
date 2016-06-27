@@ -1,0 +1,14 @@
+<div class="top-bar" id="main-menu">
+  <div class="top-bar-left">
+    <ul class="dropdown menu" data-dropdown-menu>
+      <li><a ui-sref="home" class="menu-text">Mega Note</a></li>
+    </ul>
+  </div>
+  <div class="top-bar-right">
+    <ul class="menu" data-responsive-menu="drilldown medium-dropdown">
+      <li class="nav-item" ng-show="!vm.isLoggedIn()"><a ui-sref="register" class="nav-item-text">Register</a></li>
+      <li class="nav-item" ng-show="!vm.isLoggedIn()"><a ui-sref="login" class="nav-item-text">Log in</a></li>
+      <li class="nav-item" ng-show="vm.isLoggedIn()"><a ng-click="vm.logout()" class="nav-item-text">Log out</a></li>
+    </ul>
+  </div>
+</div>
