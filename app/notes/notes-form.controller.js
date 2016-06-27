@@ -6,13 +6,16 @@
 
   NotesFormController.$inject = ['$state', '$scope', 'Flash', 'NotesService'];
   function NotesFormController($state, $scope, Flash, NotesService) {
+    $scope.clearForm = clearForm;
+    $scope.save = save;
+    $scope.delete = deleteScope;
     $scope.note = NotesService.find($state.params.noteId);
 
-    $scope.clearForm = function() {
+    function clearForm() {
       $scope.note = { title: '', body_html: '' };
-    };
+    }
 
-    $scope.save = function() {
+    function save() {
       if ($scope.note._id) {
         NotesService.update($scope.note)
           .then(
@@ -35,13 +38,13 @@
               Flash.create('danger', 'Oops! Something went wrong.');
             });
       }
-    };
+    }
 
-    $scope.delete = function() {
+    function deleteScope() {
       NotesService.delete($scope.note)
         .then(function() {
           $scope.clearForm();
         });
-    };
+    }
   }
 })();
