@@ -1,6 +1,7 @@
 (function() {
+  'use strict';
+
   angular.module('meganote.notes')
-    .constant('serverUrl', 'http://localhost:3030/')
     .service('NotesService', NotesService);
 
   NotesService.$inject = ['$http'];
