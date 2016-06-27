@@ -1,5 +1,5 @@
 (function() {
-  angular.module('meganote.core')
+  angular.module('meganote.notes')
     .controller('NotesFormController', NotesFormController);
 
   NotesFormController.$inject = ['$state', '$scope', 'Flash', 'NotesService'];
