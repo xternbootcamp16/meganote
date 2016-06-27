@@ -6,7 +6,7 @@
     .factory('firebaseDataService', firebaseDataService);
 
   function firebaseDataService() {
-    var root = firebase.database().ref(); // Get the root of the the database
+    var root = firebase.database().ref();          // Get the root of the the database
 
     // Create you nodes (tables) here
     var service = {
@@ -19,3 +19,5 @@
     return service;
   }
 })();
+
+// In this file, we define the service for firebase and attache it to the core module.

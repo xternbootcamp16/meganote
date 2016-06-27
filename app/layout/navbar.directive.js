@@ -8,16 +8,12 @@
   function xtNavbar() {
     return {
       templateUrl: 'app/layout/navbar.html',
-      restrict: 'E', // To be used as an element tag
-      controller: NavbarController,
+      restrict: 'E',                         // To be used as an element tag
+      controller: 'NavbarController',
       controllerAs: 'vm',
       scope: {}
     };
   }
-
-  NavbarController.$inject = ['$state'];
-
-  function NavbarController($state) {
-    $state.go('index');
-  }
 })();
+
+// In this file, we define a new directive and attach it to the layout module

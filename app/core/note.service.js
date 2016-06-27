@@ -28,3 +28,6 @@
     }
   }
 })();
+
+
+// In this file, we defing a new service for notes and attach it to the core module "meganote.core"
