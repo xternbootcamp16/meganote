@@ -3,7 +3,7 @@
 <!--[if IE 7]>         <html lang="en" ng-app="meganote" class="no-js lt-ie9 lt-ie8"> <![endif]-->
 <!--[if IE 8]>         <html lang="en" ng-app="meganote" class="no-js lt-ie9"> <![endif]-->
 <!--[if gt IE 8]><!-->
-<html lang="en" ng-app="meganote" ng-strict-di class="no-js"> <!--<![endif]-->
+<html ng-app="megaNote" lang="en" ng-app="meganote" ng-strict-di class="no-js"> <!--<![endif]-->
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -29,7 +29,7 @@
       <div ui-view></div>
     </div>
 
-
+    <!-- Imported scripts -->
     <script src="bower_components/jquery/dist/jquery.min.js"></script>
     <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
     <script src="bower_components/angular-loader/angular-loader.min.js"></script>
@@ -40,9 +40,16 @@
     <script src="bower_components/textAngular/dist/textAngular-sanitize.min.js"></script>
     <script src="bower_components/textAngular/dist/textAngular.min.js"></script>
 
+    <!-- Created Scripts -->
     <script src="app.js"></script>
     <script src="notes/notes.js"></script>
     <script src="notes/notes-form.js"></script>
     <script src="notes/notes.service.js"></script>
+
+    <!-- Constants -->
+    <script src="notes/constants.js"></script>
+
+    <!-- Controllers -->
+    <!-- <script src="notes/notesList.controller.js"></script> -->
   </body>
 </html>
