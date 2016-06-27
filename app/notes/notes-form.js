@@ -1,4 +1,6 @@
 (function() {
+  'use strict';
+    
   angular.module('meganote.notes')
     .controller('NotesFormController', NotesFormController);
 

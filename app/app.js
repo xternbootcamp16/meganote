@@ -1,8 +1,15 @@
 (function() {
-  var app = angular.module('meganote', [
+  'use strict';
+  
+  angular.module('meganote', [
+    //Angular modules
     'ui.router',
+    
+    //3rd Party modules
     'ngFlash',
     'textAngular',
+    
+    //Main modules
     'meganote.notes'
   ]);
 

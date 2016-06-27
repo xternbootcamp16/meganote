@@ -1,9 +1,12 @@
 (function() {
+  'use strict';
+  
   angular.module('meganote.notes', ['ui.router'])
     .config(notesConfig)
     .controller('NotesController', NotesController);
 
   notesConfig.$inject = ['$stateProvider'];
+  
   function notesConfig($stateProvider) {
     $stateProvider
 
