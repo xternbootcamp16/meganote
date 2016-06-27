@@ -1,3 +1,5 @@
-/**
- * Created by matt on 6/27/2016.
- */
+(function () {
+    'use strict';
+
+    angular.module('meganote.form',[]);
+})();
