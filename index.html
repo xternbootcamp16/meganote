@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html lang="en" ng-app="meganote" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html lang="en" ng-app="meganote" class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html lang="en" ng-app="meganote" class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html lang="en" ng-app="meganote" ng-strict-di class="no-js"> <!--<![endif]-->
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title ng-bind="$state.current.name + ' - Meganote'">Meganote</title>
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Merriweather:400,300,300italic|Oxygen:400,300,700">
+    <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.css">
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="bower_components/textAngular/dist/textAngular.css">
+    <link rel="stylesheet" href="app/content/app.css" charset="utf-8">
+  </head>
+  <body>
+
+  <xt-Nav></xt-Nav>
+
+    <!--bower_components-->
+    <script src="app/bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="app/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="app/bower_components/angular-loader/angular-loader.min.js"></script>
+    <script src="app/bower_components/angular/angular.js"></script>
+    <script src="app/bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
+    <script src="app/bower_components/angular-flash-alert/dist/angular-flash.js"></script>
+    <script src="app/bower_components/textAngular/dist/textAngular-rangy.min.js"></script>
+    <script src="app/bower_components/textAngular/dist/textAngular-sanitize.min.js"></script>
+    <script src="app/bower_components/textAngular/dist/textAngular.min.js"></script>
+
+    <!--app.js file-->
+    <script src="app.js"></script>
+
+    <!--notes files-->
+    <script src="app/notes/notes.js"></script>
+    <script src="app/notes/notes-form.js"></script>
+    <script src="app/notes/notes.service.js"></script>
+
+    <!-- layout module-->
+    <script src="app/layout/layout.module.js"></script>
+    <script src="app/layout/navbar.directive.js"></script>
+
+  </body>
+</html>
