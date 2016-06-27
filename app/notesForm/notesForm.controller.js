@@ -44,7 +44,7 @@
     }
 
     function deleteNote() {
-      NotesService.delete(vm.note)
+      NotesService.deleteNote(vm.note)
         .then(function() {
           vm.clearForm();
         });
