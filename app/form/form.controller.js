@@ -1,21 +1,29 @@
 (function() {
-  angular.module('meganote.notes')
+  'use strict';
+    
+  angular.module('meganote.form')
     .controller('NotesFormController', NotesFormController);
 
   NotesFormController.$inject = ['$state', '$scope', 'Flash', 'NotesService'];
+
   function NotesFormController($state, $scope, Flash, NotesService) {
-    $scope.note = NotesService.find($state.params.noteId);
+    var vm = $scope;
+    vm.note = NotesService.find($state.params.noteId);
 
-    $scope.clearForm = function() {
-      $scope.note = { title: '', body_html: '' };
-    };
+    vm.clearForm = clearForm;
+    vm.save = save;
+    vm.remove = remove;
 
-    $scope.save = function() {
-      if ($scope.note._id) {
-        NotesService.update($scope.note)
+    function clearForm() {
+      vm.note = { title: '', body_html: '' };
+    }
+
+    function save() {
+      if (vm.note._id) {
+        NotesService.update(vm.note)
           .then(
             function(res) {
-              $scope.note = res.data.note;
+              vm.note = res.data.note;
               Flash.create('success', res.data.message);
             },
             function() {
@@ -23,23 +31,23 @@
             });
       }
       else {
-        NotesService.create($scope.note)
+        NotesService.create(vm.note)
           .then(
             function(res) {
-              $scope.note = res.data.note;
+              vm.note = res.data.note;
               Flash.create('success', res.data.message);
             },
             function() {
               Flash.create('danger', 'Oops! Something went wrong.');
             });
       }
-    };
+    }
 
-    $scope.delete = function() {
-      NotesService.delete($scope.note)
+    function remove() {
+      NotesService.delete(vm.note)
         .then(function() {
-          $scope.clearForm();
+          vm.clearForm();
         });
-    };
+    }
   }
 }());

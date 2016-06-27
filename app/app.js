@@ -1,9 +1,17 @@
 (function() {
-  var app = angular.module('meganote', [
+  'use strict';
+  
+  angular.module('meganote', [
+    //Angular modules
     'ui.router',
+    
+    //3rd Party modules
     'ngFlash',
     'textAngular',
-    'meganote.notes'
+    
+    //Main modules
+    'meganote.notes',
+    'meganote.form'
   ]);
 
   function config($urlRouterProvider) {
