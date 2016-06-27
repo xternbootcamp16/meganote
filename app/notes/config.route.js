@@ -2,17 +2,32 @@
   'use strict';
 
   angular
-    .module('meganote.note')
-    .config(configFunction);
+    .module('meganote.notes', ['ui.router'])
+    .config(notesConfig);
 
-  configFunction.$inject = ['$stateProvider'];
-
-  function configFunction($stateProvider) {
-    $stateProvider.state('note', {
-      url: '/notes',
-      templateUrl: 'index.html',
-      controller: 'NotesController',
+  notesConfig.$inject = ['$stateProvider'];
+  function notesConfig($stateProvider) {
+    $stateProvider
+      .state('note', {
+        url: '/notes',
+        templateUrl: 'notes/notes.html',
+        controller: 'NotesController',
+        controllerAs: 'vm',
+        resolve: {
+          notesLoaded: notesLoaded
+        }
+      })
+    .state('notes.form', {
+      url: '/:noteId',
+      templateUrl: 'notes/notes-form.html',
+      controller: 'NotesformController',
       controllerAs: 'vm'
     });
   }
-})();
+
+  notesLoaded.$inject = ['NotesService'];
+  function notesLoaded(NotesService) {
+    return NotesService.getNotes();
+  }
+
+}());
