@@ -6,18 +6,21 @@ font-family: Merriweather;
 font-weight: 300;
 color: #FE5F55; }
 
-.container {
-  width: 100% !important;
-  padding-left: 0 !important;
-  padding-right: 0 !important; }
+.container.wrap {
+  width: 100%;
+  padding-left: 0;
+  padding-right: 0;
+}
 
-.row {
-  margin-left: 0 !important;
-  margin-right: 0 !important; }
+.container .row {
+  margin-left: 0;
+  margin-right: 0;
+}
 
-.col-xs-12 {
-  padding-left: 0 !important;
-  padding-right: 0 !important; }
+.row .col-xs-12 {
+  padding-left: 0;
+  padding-right: 0;
+}
 
 header .well {
   padding-top: 5px;
