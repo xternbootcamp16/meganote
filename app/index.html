@@ -18,7 +18,13 @@
 
     <div class="container wrap">
       <div my-header></div>
-      <div ui-view></div>
+
+      <div class="container">
+        <div class="row">
+          <div ui-view class="col-xs-4"></div>
+          <my-notes-form class="col-xs-8"></my-notes-form>
+        </div>
+      </div>
     </div>
 
     <!-- Third-party scripts -->
@@ -35,7 +41,7 @@
     <!-- Main app module -->
     <script src="app.js"></script>
 
-    <!-- Header module -->
+    <!-- Layout module -->
     <script src="layout/layout.module.js"></script>
     <script src="layout/header.directive.js"></script>
 

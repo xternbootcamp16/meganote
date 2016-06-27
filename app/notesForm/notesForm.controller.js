@@ -3,7 +3,17 @@
 
   angular
     .module('meganote.notesForm')
-    .controller('NotesFormController', NotesFormController);
+    .directive('myNotesForm', myNotesForm);
+
+  function myNotesForm() {
+    return {
+      restrict: 'AE',
+      templateUrl: 'notesForm/notesForm.html',
+      controller: NotesFormController,
+      controllerAs: 'vm',
+      scope: {}
+    };
+  }
 
   NotesFormController.$inject = ['$state', 'Flash', 'NotesService'];
   function NotesFormController($state, Flash, NotesService) {
