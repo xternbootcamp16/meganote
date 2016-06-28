@@ -22,7 +22,7 @@
       <div class="container">
         <div class="row">
           <div ui-view class="col-xs-4"></div>
-          <my-notes-form class="col-xs-8"></my-notes-form>
+          <div my-notes-form class="col-xs-8" note="vm.note"></div>
         </div>
       </div>
     </div>
@@ -54,6 +54,7 @@
 
     <!-- Notes form module -->
     <script src="notesForm/notesForm.module.js"></script>
+    <script src="notesForm/notesForm.directive.js"></script>
     <script src="notesForm/notesForm.config.js"></script>
     <script src="notesForm/notesForm.controller.js"></script>
   </body>
