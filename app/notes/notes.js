@@ -3,6 +3,6 @@
 
   angular
     .module('meganote.notes', ['ui.router'])
-    .constant('serverURL', 'http://localhost:8080/');
+    .constant('serverURL', 'http://localhost:3030/');
 
   }());
