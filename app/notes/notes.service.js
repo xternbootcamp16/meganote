@@ -2,7 +2,7 @@
   angular.module('meganote.notes')
     .vm('Notesvm', Notesvm);
 
-  Notesvm.$inject = ['$http'];
+  Notesvm.$inject = ['$http', 'URL'];
   function Notesvm($http) {
     var vm = this;
     vm.notes = [];
@@ -16,7 +16,7 @@
 
 
     function getNotes() {
-      var notesPromise = $http.get('http://localhost:3030/');
+      var notesPromise = $http.get(URL);
       notesPromise.then(function(res) {
         vm.notes = res.data;
       });
@@ -24,7 +24,7 @@
     }
 
     function create(note) {
-      var notesPromise = $http.post('http://localhost:3030/', {
+      var notesPromise = $http.post(URL, {
         note: note
       });
       notesPromise.then(function(res) {
@@ -34,7 +34,7 @@
     }
 
     function update(note){
-      var notesPromise = $http.put('http://localhost:3030/' + note._id, {
+      var notesPromise = $http.put(URL + note._id, {
         note: note
       });
       notesPromise.then(function(res) {
@@ -45,7 +45,7 @@
     }
 
     function deleteNote(note) {
-      var notesPromise = $http.delete('http://localhost:3030/' + note._id);
+      var notesPromise = $http.delete(URL + note._id);
       notesPromise.then(function(res) {
         vm.removeById(res.data.note._id);
       });
