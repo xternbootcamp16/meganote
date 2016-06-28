@@ -5,7 +5,7 @@
     .module('meganote.notes')
     .controller('NotesFormController', NotesFormController);
 
-    NotesFormController.$inject = ['$state', '$scope',];
+    NotesFormController.$inject = ['$state', '$scope', 'Flash', 'NotesService'];
     function
     //controller function refactor based on classmate suggestion
 
