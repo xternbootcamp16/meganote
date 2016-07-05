@@ -36,7 +36,7 @@
     };
 
     $scope.delete = function() {
-      NotesService.delete($scope.note)
+      NotesService.destroy($scope.note)
         .then(function() {
           $scope.clearForm();
         });
