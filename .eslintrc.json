@@ -11,6 +11,10 @@
       "error",
       2
     ],
+    "comma-dangle": [
+      "error",
+      "only-multiline"
+    ],
     "linebreak-style": [
       "error",
       "unix"
