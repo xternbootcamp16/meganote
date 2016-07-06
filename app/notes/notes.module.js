@@ -1,3 +1,3 @@
 (function() {
-  angular.module('meganote.notes');
+  angular.module('meganote.notes', []);
 })();
