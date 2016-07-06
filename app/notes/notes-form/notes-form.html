@@ -1,17 +1,17 @@
-<form ng-submit="save()">
+<form ng-submit="vm.save()">
   <p>
     <input
       type="text"
       name="title"
       id="note_title"
       placeholder="Title your note"
-      ng-model="note.title">
+      ng-model="vm.note.title">
   </p>
   <p>
     <text-angular
       name="body_html"
       placeholder="Just start typing..."
-      ng-model="note.body_html"
+      ng-model="vm.note.body_html"
       ta-toolbar="[
         ['bold', 'italics', 'underline'],
         ['ul', 'ol', 'indent', 'outdent'],
@@ -24,10 +24,10 @@
     <input
       type="submit"
       name="commit"
-      value="{{ note._id ? 'Update Note' : 'Create Note' }}"
+      value="{{ vm.note._id ? 'Update Note' : 'Create Note' }}"
       class="btn btn-default">
 
-    <a ng-click="delete()" ng-show="note._id"><i class="fa fa-trash-o fa-lg"></i></a>
+    <a ng-click="vm.destroy()" ng-show="vm.note._id"><i class="fa fa-trash-o fa-lg"></i></a>
   </div>
 </form>
 
