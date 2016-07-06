@@ -4,7 +4,7 @@
 
   NotesService.$inject = ['$http', 'noteConstants'];
   function NotesService($http, noteConstants) {
-    var notes = [];
+  //  var notes = [];
     var service = {
       getNotes: getNotes,
       create: create,
@@ -12,9 +12,9 @@
       delete : deleteNote,
       removeById:  removeById,
       find :find,
-      notes : notes
+      notes : [],
     };
-
+/////////////////////////////////////////////////
     function getNotes() {
       var notesPromise = $http.get(noteConstants.apiUrl);
 

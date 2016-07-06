@@ -31,6 +31,9 @@
     ],
     "no-implicit-globals": [
       "error"
-    ]
-  }
+    ],
+    "comma-dangle": [
+      "error",
+      "only-multiline"
+      ]  }
 }
