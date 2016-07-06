@@ -14,7 +14,7 @@
       update: update,
       deleteNote: deleteNote,
       removeById: removeById,
-      find: find
+      find: find,
     };
 
     return service;
