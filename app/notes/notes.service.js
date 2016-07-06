@@ -12,7 +12,7 @@
       getNotes: getNotes,
       create: create,
       update: update,
-      deleteNote: deleteNote,
+      destroy: destroy,
       removeById: removeById,
       find: find,
     };
@@ -54,7 +54,7 @@
       return notesPromise;
     }
 
-    function deleteNote(note) {
+    function destroy(note) {
       var notesPromise = $http.delete(DATABASE_URL + note._id);
 
       notesPromise.then(function(res) {
