@@ -34,6 +34,7 @@
             function(res) {
               vm.note = res.data.note;
               Flash.create('success', res.data.message);
+              $state.go('notes.form', { noteId: res.data.note._id });
             },
             function() {
               Flash.create('danger', 'Oops! Something went wrong.');
