@@ -30,7 +30,8 @@
             },
             function() {
               Flash.create('danger', 'Oops! Something went wrong.');
-            });
+            }
+          );
       }
       else {
         NotesService.create(vm.note)
@@ -42,7 +43,8 @@
             },
             function() {
               Flash.create('danger', 'Oops! Something went wrong.');
-            });
+            }
+          );
       }
     }
 
