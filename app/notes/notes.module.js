@@ -2,7 +2,5 @@
   'use strict';
 
   angular
-    .module('meganote.notes', [
-      'ui.router'
-    ]);
+    .module('meganote.notes', []);
 })();
