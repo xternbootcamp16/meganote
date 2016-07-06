@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html lang="en" ng-app="meganote" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html lang="en" ng-app="meganote" class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html lang="en" ng-app="meganote" class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html lang="en" ng-app="meganote" ng-strict-di class="no-js"> <!--<![endif]-->
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title ng-bind="$state.current.name + ' - Meganote'">Meganote</title>
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Merriweather:400,300,300italic|Oxygen:400,300,700">
+    <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.css">
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="bower_components/textAngular/dist/textAngular.css">
+    <link rel="stylesheet" href="content/app.css" charset="utf-8">
+  </head>
+  <body>
+
+    <div class="container wrap">
+      <div my-header></div>
+      <div ui-view></div>
+    </div>
+
+    <!-- Third-party scripts -->
+    <script src="bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="bower_components/angular-loader/angular-loader.min.js"></script>
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
+    <script src="bower_components/angular-flash-alert/dist/angular-flash.js"></script>
+    <script src="bower_components/textAngular/dist/textAngular-rangy.min.js"></script>
+    <script src="bower_components/textAngular/dist/textAngular-sanitize.min.js"></script>
+    <script src="bower_components/textAngular/dist/textAngular.min.js"></script>
+
+    <!-- Main app module -->
+    <script src="app.module.js"></script>
+
+    <!-- Header module -->
+    <script src="layout/layout.module.js"></script>
+    <script src="layout/header.directive.js"></script>
+
+    <!-- Notes module -->
+    <script src="notes/notes.module.js"></script>
+    <script src="notes/route-config.js"></script>
+    <script src="notes/notes.service.js"></script>
+    <script src="notes/notes.database.js"></script>
+    <script src="notes/notes.controller.js"></script>
+
+    <!-- Notes form module -->
+    <script src="notesForm/notesForm.module.js"></script>
+    <script src="notesForm/notesForm.config.js"></script>
+    <script src="notesForm/notesForm.controller.js"></script>
+  </body>
+</html>
