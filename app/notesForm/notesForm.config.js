@@ -10,7 +10,7 @@
     $stateProvider
       .state('notes.form', {
         url: '/:noteId',
-        templateUrl: 'notesForm/notesForm.html',
+        template: '<div my-notes-form></div>',
         controller: 'NotesFormController',
         controllerAs: 'vm'
       });

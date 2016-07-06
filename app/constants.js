@@ -2,6 +2,6 @@
   'use strict';
 
   angular
-    .module('meganote.notes')
+    .module('meganote')
     .constant('DATABASE_URL', 'http://localhost:3030/');
 })();

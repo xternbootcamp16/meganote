@@ -3,12 +3,56 @@
 
   angular
     .module('meganote.notesForm')
-    .controller('NotesFormStartController', NotesFormStartController);
+    .controller('NotesFormController', NotesFormController);
 
-  NotesFormStartController.$inject = ['$state', 'NotesService'];
-  function NotesFormStartController($state, NotesService) {
+  NotesFormController.$inject = ['$state', 'Flash', 'NotesService'];
+  function NotesFormController($state, Flash, NotesService) {
     var vm = this;
 
     vm.note = NotesService.find($state.params.noteId);
+    vm.clearForm = clearForm;
+    vm.save = saveNote;
+    vm.deleteNote = deleteNote;
+
+    /////////////////////
+
+    function clearForm() {
+      vm.note = { title: '', body_html: '' };
+    }
+
+    function saveNote() {
+      if (vm.note._id) {
+        NotesService.update(vm.note)
+          .then(
+            function(res) {
+              vm.note = res.data.note;
+              Flash.create('success', res.data.message);
+            },
+            function() {
+              Flash.create('danger', 'Oops! Something went wrong.');
+            }
+          );
+      }
+      else {
+        NotesService.create(vm.note)
+          .then(
+            function(res) {
+              vm.note = res.data.note;
+              Flash.create('success', res.data.message);
+              $state.go('notes.form', { noteId: vm.note._id });
+            },
+            function() {
+              Flash.create('danger', 'Oops! Something went wrong.');
+            }
+          );
+      }
+    }
+
+    function deleteNote() {
+      NotesService.deleteNote(vm.note)
+        .then(function() {
+          vm.clearForm();
+        });
+    }
   }
 })();

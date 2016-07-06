@@ -19,12 +19,7 @@
     <div class="container wrap">
       <div my-header></div>
 
-      <div class="container">
-        <div class="row">
-          <div ui-view class="col-xs-4"></div>
-          <div my-notes-form class="col-xs-8" note="vm.note"></div>
-        </div>
-      </div>
+      <div ui-view class="col-xs-4"></div>
     </div>
 
     <!-- Third-party scripts -->
@@ -40,6 +35,7 @@
 
     <!-- Main app module -->
     <script src="app.js"></script>
+    <script src="constants.js"></script>
 
     <!-- Layout module -->
     <script src="layout/layout.module.js"></script>
@@ -49,13 +45,12 @@
     <script src="notes/notes.module.js"></script>
     <script src="notes/notes.config.js"></script>
     <script src="notes/notes.service.js"></script>
-    <script src="notes/notes.database.js"></script>
     <script src="notes/notes.controller.js"></script>
 
     <!-- Notes form module -->
     <script src="notesForm/notesForm.module.js"></script>
-    <script src="notesForm/notesForm.directive.js"></script>
     <script src="notesForm/notesForm.config.js"></script>
     <script src="notesForm/notesForm.controller.js"></script>
+    <script src="notesForm/directives/notesForm.directive.js"></script>
   </body>
 </html>
