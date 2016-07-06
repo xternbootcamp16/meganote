@@ -19,6 +19,8 @@
 
     return service;
 
+    ///////////////
+
     function getNotes() {
       var notesPromise = $http.get(DATABASE_URL);
 

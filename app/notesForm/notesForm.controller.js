@@ -14,6 +14,8 @@
     vm.save = saveNote;
     vm.delete = deleteNote;
 
+    /////////////////////
+
     function clearForm() {
       vm.note = { title: '', body_html: '' };
     }
