@@ -1,6 +1,6 @@
 (function(){
   'use strict';
-  angular.module('meganote').factory('flashService',flashService);
+  angular.module('meganote.notes').factory('flashService',flashService);
 
   flashService.$inject = ['Flash'];
   function flashService(Flash){

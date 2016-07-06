@@ -1,26 +1,26 @@
 (function() {
-  angular.module('meganote.notes')
+  angular.module('meganote.notesForm')
     .controller('NotesFormController', NotesFormController);
 
-  NotesFormController.$inject = ['$state', '$scope', 'flashService', 'NotesService'];
-  function NotesFormController($state, $scope, flashService, NotesService) {
+  NotesFormController.$inject = ['$state', 'flashService', 'NotesService'];
+  function NotesFormController($state, flashService, NotesService) {
     var vm = this;
     vm.clearForm = clearForm;
     vm.save = save;
     vm.delete = deleteNote;
-    $scope.note = NotesService.find($state.params.noteId);
+    vm.note = NotesService.find($state.params.noteId);
     /////////////////////////////FUNCTIONS BELOW/////////////////
 
     function clearForm() {
-      $scope.note = { title: '', body_html: '' };
+      vm.note = { title: '', body_html: '' };
     }
 
     function save () {
-      if ($scope.note._id) {
-        NotesService.update($scope.note)
+      if (vm.note._id) {
+        NotesService.update(vm.note)
             .then(
               function(res) {
-                $scope.note = res.data.note;
+                vm.note = res.data.note;
                 flashService.success(res.data.message);//Flash.create('success', res.data.message);
               },
               function() {
@@ -28,10 +28,10 @@
               });
       }
       else {
-        NotesService.create($scope.note)
+        NotesService.create(vm.note)
             .then(
               function(res) {
-                $scope.note = res.data.note;
+                vm.note = res.data.note;
                 flashService.success(res.data.message);//Flash.create('success', res.data.message); //MIGRATE FLASH STUFF TO SERVICE
               },
               function() {
@@ -41,9 +41,9 @@
     }
 
     function deleteNote() {
-      NotesService.delete($scope.note)
+      NotesService.delete(vm.note)
         .then(function() {
-          $scope.clearForm();
+          vm.clearForm();
         });
     }
   }

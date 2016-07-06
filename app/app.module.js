@@ -3,7 +3,9 @@
     'ui.router',
     'ngFlash',
     'textAngular',
-    'meganote.noteConst'
+    'meganote.notes',
+    'meganote.notesForm',
+    'meganote.noteConst',
   ]).config(config);
 
   config.$inject = ['$urlRouterProvider'];
