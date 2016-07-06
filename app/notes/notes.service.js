@@ -3,8 +3,8 @@
   angular.module('meganote.notes')
     .factory('NotesService', NotesService);
 
-  NotesService.$inject = ['$http'];
-  function NotesService($http) {
+  NotesService.$inject = ['$http', 'API_BASE'];
+  function NotesService($http, API_BASE) {
     var service = {
       notes: [],
       getNotes: getNotes,
@@ -20,7 +20,7 @@
     //////////////////////
 
     function getNotes() {
-      var notesPromise = $http.get('http://localhost:3030/');
+      var notesPromise = $http.get(API_BASE);
 
       notesPromise.then(function(res) {
         service.notes = res.data;
@@ -30,7 +30,7 @@
     }
 
     function create(note) {
-      var notesPromise = $http.post('http://localhost:3030/', {
+      var notesPromise = $http.post(API_BASE, {
         note: note
       });
 
@@ -42,7 +42,7 @@
     }
 
     function update(note) {
-      var notesPromise = $http.put('http://localhost:3030/' + note._id, {
+      var notesPromise = $http.put(API_BASE + note._id, {
         note: note
       });
 
@@ -55,7 +55,7 @@
     }
 
     function destroy(note) {
-      var notesPromise = $http.delete('http://localhost:3030/' + note._id);
+      var notesPromise = $http.delete(API_BASE + note._id);
 
       notesPromise.then(function(res) {
         service.removeById(res.data.note._id);
