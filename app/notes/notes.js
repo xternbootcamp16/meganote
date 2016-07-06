@@ -1,5 +1,5 @@
 (function() {
-  angular.module('meganote.notes', ['ui.router'])
+  angular.module('meganote.notes')
     .config(notesConfig)
     .controller('NotesController', NotesController);
 
