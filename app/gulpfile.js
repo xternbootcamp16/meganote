@@ -6,6 +6,7 @@
   var sourcemaps = require('gulp-sourcemaps');
   var babel = require('gulp-babel');
   var connect =  require('gulp-connect');
+  var jsFiles = ['app/**/*.js', '!app/bower_components/**/*','!app/content/bundle.js'];
 
   gulp.task('bundle', bundle);
   gulp.task('start-webserver', startServer);
@@ -13,7 +14,13 @@
   glulp.task('default', ['bundle', 'start-webserver', 'watch']);
 //
   function bundle() {
-    
+    return gulp.src(jsFiles)
+    .pipe(plumber()) //allows gulp to restart
+    .pipe(sourcemaps.init()) //sourcemaps can now watch this pipe
+    .pipe(bable())  //transpile ES6 => ES5
+    .pipe(concat('bundle.js'))//compresses the js into a single file
+    .pipe(sourcemaps.write('.')) //emits sourcemap of bundle.js.map for debugging
+    .pipe(gulp.dest('app/content')); //landing pad for the bundled file and map.
   }
   function startServer(){
     connect.server({root: 'app'});
