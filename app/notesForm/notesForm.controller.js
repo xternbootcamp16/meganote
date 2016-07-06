@@ -12,7 +12,7 @@
     vm.note = NotesService.find($state.params.noteId);
     vm.clearForm = clearForm;
     vm.save = saveNote;
-    vm.delete = deleteNote;
+    vm.deleteNote = deleteNote;
 
     /////////////////////
 
