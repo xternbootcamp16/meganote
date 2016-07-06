@@ -6,3 +6,5 @@ tmp
 .DS_Store
 Thumbs.db
 .idea
+bundle.js
+bundle.js.map

@@ -11,7 +11,9 @@
     "gulp-babel": "^6.1.2",
     "gulp-concat": "^2.6.0",
     "gulp-connect": "^4.1.0",
+    "gulp-order": "^1.1.1",
     "gulp-plumber": "^1.1.0",
+    "gulp-print": "^2.0.1",
     "gulp-sourcemaps": "^1.6.0",
     "http-server": "^0.9.0"
   },
