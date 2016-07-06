@@ -4,7 +4,8 @@
     'ui.router',
     'ngFlash',
     'textAngular',
-    'meganote.notes'
+    'meganote.notes',
+    'meganote.notesForm'
   ])
     .config(config);
 

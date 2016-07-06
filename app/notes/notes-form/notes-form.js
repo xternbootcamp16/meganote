@@ -1,6 +1,6 @@
 (function() {
   'use strict';
-  angular.module('meganote.notes')
+  angular.module('meganote.notesForm')
     .controller('NotesFormController', NotesFormController);
 
   NotesFormController.$inject = ['$state', '$scope', 'Flash', 'NotesService'];
