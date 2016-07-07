@@ -1,10 +1,22 @@
 {
   angular.module('meganote.signUp')
-    .directive('signUp', signUp);
+    .directive('signUp', () => {
 
-  function signUp() {
-    return {
-      template: '<h1>Sign Up</h1>',
-    };
-  }
+      class SignUpController {
+        constructor() {
+          this.user = {};
+        }
+        submit() {
+          console.log(this.user);
+        }
+      }
+
+      return {
+        scope: {},
+        controller: SignUpController,
+        controllerAs: 'vm',
+        bindToController: true,
+        templateUrl: '/sign-up/sign-up.html',
+      };
+    });
 }
