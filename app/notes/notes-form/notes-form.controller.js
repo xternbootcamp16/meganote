@@ -4,7 +4,7 @@
 
   NotesFormController.$inject = ['$state', 'Flash', 'NotesService'];
   function NotesFormController($state, Flash, NotesService) {
-    let vm = this;
+    const vm = this;
     vm.note = NotesService.find($state.params.noteId);
     vm.clearForm = clearForm;
     vm.save = save;
