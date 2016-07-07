@@ -30,7 +30,9 @@
       ], { base: './' }))
       .pipe(plumber())                    // restart gulp on error
       .pipe(sourcemaps.init())            // let sourcemaps watch this pipeline
-      .pipe(babel())                      // transpile into ES5 for browsers
+      .pipe(babel({
+        presets: ['es2015']
+      }))                                 // transpile into ES5 for browsers
       .pipe(concat('bundle.js'))          // concatenate all JS files
       .pipe(sourcemaps.write('.'))        // emit the .map file for debugging
       .pipe(gulp.dest('app/content'));
