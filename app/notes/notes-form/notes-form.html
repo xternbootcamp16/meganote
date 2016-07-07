@@ -1,0 +1,36 @@
+<form ng-submit="vm.save()">
+  <p>
+    <input
+      type="text"
+      name="title"
+      id="note_title"
+      placeholder="Title your note"
+      ng-model="vm.note.title">
+  </p>
+  <p>
+    <text-angular
+      name="body_html"
+      placeholder="Just start typing..."
+      ng-model="vm.note.body_html"
+      ta-toolbar="[
+        ['bold', 'italics', 'underline'],
+        ['ul', 'ol', 'indent', 'outdent'],
+        ['insertLink'],
+        ['html']
+      ]"
+      ></text-angular>
+  </p>
+  <div class="form-actions">
+    <input
+      type="submit"
+      name="commit"
+      value="{{ vm.note._id ? 'Update Note' : 'Create Note' }}"
+      class="btn btn-default">
+
+    <a ng-click="vm.destroy()" ng-show="vm.note._id"><i class="fa fa-trash-o fa-lg"></i></a>
+  </div>
+</form>
+
+<flash-message
+  duration="3000"
+  show-close="false"></flash-message>

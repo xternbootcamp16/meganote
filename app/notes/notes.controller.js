@@ -1,14 +1,11 @@
-(function() {
-  'use strict'
-
-  angular
-    .module('meganote.notes', ['ui.router'])
+{
+  
+  angular.module('meganote.notes')
     .controller('NotesController', NotesController);
 
-    NotesController.$inject = ['$scope', 'NotesService']
-    function
-      NotesController($scope, NotesService) //unsure whch of these belong in quotes if at all
-      $scope.notes = NotesService.notes;
-
+  NotesController.$inject = ['$scope', 'NotesService'];
+  function NotesController($scope, NotesService) {
+    var vm = this;
+    vm.notes = NotesService.notes;
+  }
 }
-}());
