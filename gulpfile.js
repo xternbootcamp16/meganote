@@ -2,7 +2,6 @@
   'use strict';
   var gulp = require('gulp');
   var order = require('gulp-order');
-  var print = require('gulp-print');
   var concat = require('gulp-concat');
   var plumber = require('gulp-plumber');
   var sourcemaps = require('gulp-sourcemaps');
