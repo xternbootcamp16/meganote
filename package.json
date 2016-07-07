@@ -14,11 +14,10 @@
     "gulp-connect": "^4.1.0",
     "gulp-order": "^1.1.1",
     "gulp-plumber": "^1.1.0",
-    "gulp-sourcemaps": "^1.6.0",
-    "http-server": "^0.9.0"
+    "gulp-sourcemaps": "^1.6.0"
   },
   "scripts": {
-    "start": "http-server app -a localhost -p 8000 -c-1",
+    "start": "gulp",
     "prestart": "npm install",
     "postinstall": "bower install",
     "preupdate-webdriver": "npm install"
