@@ -1,4 +1,4 @@
-(function() {
+{
   angular.module('meganote.notes')
     .controller('NotesController', NotesController);
 
@@ -7,4 +7,4 @@
     var vm = this;
     vm.notes = NotesService.notes;
   }
-}());
+}

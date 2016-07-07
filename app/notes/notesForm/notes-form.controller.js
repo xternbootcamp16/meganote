@@ -1,10 +1,10 @@
-(function() {
+{
   angular.module('meganote.notesForm')
     .controller('NotesFormController', NotesFormController);
 
   NotesFormController.$inject = ['$state', 'flashService', 'NotesService'];
   function NotesFormController($state, flashService, NotesService) {
-    var vm = this;
+    let vm = this;
     vm.clearForm = clearForm;
     vm.save = save;
     vm.delete = deleteNote;
@@ -47,4 +47,4 @@
         });
     }
   }
-}());
+}

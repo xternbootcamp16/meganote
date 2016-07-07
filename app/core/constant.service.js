@@ -1,4 +1,4 @@
-(function(){
+{
   'use strict';
   angular.module('meganote.noteConst',[])
   .factory('noteConstants', noteConstants);
@@ -9,4 +9,4 @@
     };
     return service;
   }
-})();
+}

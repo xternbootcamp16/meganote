@@ -1,4 +1,4 @@
-(function(){
+{
   'use strict';
   angular.module('meganote.notes').factory('flashService',flashService);
 
@@ -17,4 +17,4 @@
       Flash.create('danger',' Oops! Something went wrong.'); //MIGRATE FLASH STUFF TO SERVICE
     }
   }
-})();
+}

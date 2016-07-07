@@ -1,4 +1,4 @@
-(function() {
+{
   angular.module('meganote', [
     'ui.router',
     'ngFlash',
@@ -14,4 +14,4 @@
   }
 
 
-})();
+}
