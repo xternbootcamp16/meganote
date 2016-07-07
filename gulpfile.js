@@ -30,10 +30,9 @@
   }
   function startServer(){
     connect.server(
-    {root: 'app',
-    port: 8000});
+    {root: 'app'});
   }
   function watch(){
-    gulp.watch('app/**/*',[bundle]);
+    gulp.watch(['app/**/*', 'gulpfile.js' ],[bundle]);
   }
 })();
