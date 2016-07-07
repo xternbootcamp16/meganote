@@ -4,7 +4,7 @@
 
   flashService.$inject = ['Flash'];
   function flashService(Flash){
-    var service = {
+    let service = {
       success : success,
       fail: fail
     };

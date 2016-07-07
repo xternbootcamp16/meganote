@@ -4,7 +4,7 @@
 
   NotesController.$inject = ['$scope', 'NotesService'];
   function NotesController(NotesService) {
-    var vm = this;
+    let vm = this;
     vm.notes = NotesService.notes;
   }
 }

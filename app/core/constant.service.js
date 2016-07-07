@@ -4,7 +4,7 @@
   .factory('noteConstants', noteConstants);
 
   function noteConstants(){
-    var service = {
+    let service = {
       apiUrl: 'http://localhost:3030/'
     };
     return service;

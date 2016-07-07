@@ -5,7 +5,7 @@
   NotesService.$inject = ['$http', 'noteConstants'];
   function NotesService($http, noteConstants) {
   //  let notes = [];
-    let service = {
+    const service = {
       getNotes: getNotes,
       create: create,
       update : update,
@@ -16,7 +16,7 @@
     };
 /////////////////////////////////////////////////
     function getNotes() {
-      let notesPromise = $http.get(noteConstants.apiUrl);
+      const notesPromise = $http.get(noteConstants.apiUrl);
 
       notesPromise.then(function(res) {
         service.notes = res.data;
@@ -26,7 +26,7 @@
     }
 
     function create(note) {
-      let notesPromise = $http.post(noteConstants.apiUrl, {
+      const notesPromise = $http.post(noteConstants.apiUrl, {
         note: note
       });
 
@@ -38,7 +38,7 @@
     }
 
     function update(note) {
-      let notesPromise = $http.put(noteConstants.apiUrl + note._id, {
+      const notesPromise = $http.put(noteConstants.apiUrl + note._id, {
         note: note
       });
 
@@ -51,7 +51,7 @@
     }
 
     function deleteNote(note) {
-      let notesPromise = $http.delete(noteConstants.apiUrl + note._id);
+      const notesPromise = $http.delete(noteConstants.apiUrl + note._id);
 
       notesPromise.then(function(res) {
         service.removeById(res.data.note._id);
