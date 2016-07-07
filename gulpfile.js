@@ -47,7 +47,7 @@
   }
 
   function watch() {
-    gulp.watch('app/**/*', ['bundle']);
+    gulp.watch(['app/**/*', 'gulpfile.js'], ['bundle']);
   }
 
 })();
