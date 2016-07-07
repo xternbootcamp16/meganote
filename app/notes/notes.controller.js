@@ -1,11 +1,10 @@
 {
-  
   angular.module('meganote.notes')
     .controller('NotesController', NotesController);
 
   NotesController.$inject = ['$scope', 'NotesService'];
   function NotesController($scope, NotesService) {
-    var vm = this;
+    const vm = this;
     vm.notes = NotesService.notes;
   }
 }

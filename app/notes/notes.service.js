@@ -1,5 +1,4 @@
 {
-
   angular.module('meganote.notes')
     .factory('NotesService', NotesService);
 
