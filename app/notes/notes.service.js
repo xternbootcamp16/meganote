@@ -21,43 +21,42 @@
     function getNotes() {
       const notesPromise = $http.get(API_BASE);
 
-      notesPromise.then(function(res) {
-        service.notes = res.data;
-      });
+      notesPromise
+        .then(res => service.notes = res.data);
 
       return notesPromise;
     }
 
     function create(note) {
-      const notesPromise = $http.post(`${API_BASE} ${note._id}`
+      const notesPromise = $http.post(API_BASE, {
+        note: note
       });
 
-      notesPromise.then(function(res) {
-        service.notes.unshift(res.data.note);
-      });
+      notesPromise
+        .then(res => service.notes.unshift(res.data.note));
 
       return notesPromise;
     }
 
     function update(note) {
-      const notesPromise = $http.put(API_BASE + note._id, {
+      const notesPromise = $http.put(`${API_BASE}${note._id}`, {
         note: note
       });
 
-      notesPromise.then(function(res) {
-        service.removeById(res.data.note._id);
-        service.notes.unshift(res.data.note);
-      });
+      notesPromise
+        .then(res => {
+          service.removeById(res.data.note._id);
+          service.notes.unshift(res.data.note);
+        });
 
       return notesPromise;
     }
 
     function destroy(note) {
-      const notesPromise = $http.delete(`${API_BASE} ${note._id}`);
+      const notesPromise = $http.delete(`${API_BASE}${note._id}`);
 
-      notesPromise.then(function(res) {
-        service.removeById(res.data.note._id);
-      });
+      notesPromise
+        .then(res => service.removeById(res.data.note._id));
 
       return notesPromise;
     }
