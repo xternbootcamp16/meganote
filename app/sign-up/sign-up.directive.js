@@ -1,10 +1,23 @@
 (function() {
   'use strict';
-  angular.module('meganote.signUp').directive('signUp',signUp);
+  angular.module('meganote.signUp').directive('signUp',['UsersService',(UsersService)=>{
 
-  function signUp() {
+
+
+    class SignUpController {
+      constructor() {
+        this.user = {};
+      }
+      submit(){
+        UsersService.create(this.user);
+      }
+    }
     return {
-      templateUrl: '/app/',
+      scope: {},
+      templateUrl: '/sign-up/sign-up.html',
+      bindToController: true,
+      controllerAs: 'vm',
     };
-  }
+
+  }]);
 })();
