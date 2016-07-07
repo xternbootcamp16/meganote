@@ -4,7 +4,9 @@
     'ngFlash',
     'textAngular',
     'meganote.notes',
-    'meganote.notesForm'
+    'meganote.notesForm',
+    'meganote.users',
+    'meganote.signUp'
   ])
     .config(config);
 
