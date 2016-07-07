@@ -6,13 +6,20 @@
   "repository": "git@github.com/xternbootcamp16/meganote-seed.git",
   "license": "MIT",
   "devDependencies": {
+    "babel-preset-es2015": "^6.9.0",
     "bower": "^1.7.9",
-    "http-server": "^0.9.0"
+    "gulp": "^3.9.1",
+    "gulp-babel": "^6.1.2",
+    "gulp-concat": "^2.6.0",
+    "gulp-connect": "^4.1.0",
+    "gulp-order": "^1.1.1",
+    "gulp-plumber": "^1.1.0",
+    "gulp-sourcemaps": "^1.6.0"
   },
   "scripts": {
-    "start": "http-server app -a localhost -p 8000 -c-1",
+    "start": "node_modules/.bin/gulp",
     "prestart": "npm install",
-    "postinstall": "bower install",
+    "postinstall": "node_modules/.bin/bower install",
     "preupdate-webdriver": "npm install"
   }
 }

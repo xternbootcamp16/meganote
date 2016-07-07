@@ -1,6 +1,8 @@
 {
   "env": {
-    "browser": true
+    "browser": true,
+    "node": true,
+    "es6": true
   },
   "globals": {
     "angular": true
@@ -31,6 +33,9 @@
     ],
     "no-implicit-globals": [
       "error"
-    ]
-  }
+    ],
+    "comma-dangle": [
+      "error",
+      "only-multiline"
+      ]  }
 }
