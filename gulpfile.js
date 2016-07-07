@@ -23,7 +23,7 @@
     ], {base: './'}))
     .pipe(plumber()) //allows gulp to restart
     .pipe(sourcemaps.init()) //sourcemaps can now watch this pipe
-    .pipe(babel({presets: ["es2015"]}))  //transpile ES6 => ES5
+    .pipe(babel({presets: ['es2015']}))  //transpile ES6 => ES5
     .pipe(concat('bundle.js'))//compresses the js into a single file
     .pipe(sourcemaps.write('.')) //emits sourcemap of bundle.js.map for debugging
     .pipe(gulp.dest('app/content')); //landing pad for the bundled file and map.
