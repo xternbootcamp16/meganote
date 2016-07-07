@@ -1,11 +1,10 @@
-(function() {
-  'use strict';
+{
   angular.module('meganote.notes')
     .factory('NotesService', NotesService);
 
   NotesService.$inject = ['$http', 'API_BASE'];
   function NotesService($http, API_BASE) {
-    var service = {
+    const service = {
       notes: [],
       getNotes: getNotes,
       create: create,
@@ -20,7 +19,7 @@
     //////////////////////
 
     function getNotes() {
-      var notesPromise = $http.get(API_BASE);
+      const notesPromise = $http.get(API_BASE);
 
       notesPromise.then(function(res) {
         service.notes = res.data;
@@ -30,7 +29,7 @@
     }
 
     function create(note) {
-      var notesPromise = $http.post(API_BASE, {
+      const notesPromise = $http.post(API_BASE, {
         note: note
       });
 
@@ -42,7 +41,7 @@
     }
 
     function update(note) {
-      var notesPromise = $http.put(API_BASE + note._id, {
+      const notesPromise = $http.put(API_BASE + note._id, {
         note: note
       });
 
@@ -55,7 +54,7 @@
     }
 
     function destroy(note) {
-      var notesPromise = $http.delete(API_BASE + note._id);
+      const notesPromise = $http.delete(API_BASE + note._id);
 
       notesPromise.then(function(res) {
         service.removeById(res.data.note._id);
@@ -65,7 +64,7 @@
     }
 
     function removeById(id) {
-      for (var i=0; i < service.notes.length; i++) {
+      for (let i=0; i < service.notes.length; i++) {
         if (service.notes[i]._id === id) {
           return service.notes.splice(i, 1);
         }
@@ -73,11 +72,11 @@
     }
 
     function find(id) {
-      for (var i=0; i < service.notes.length; i++) {
+      for (let i=0; i < service.notes.length; i++) {
         if (service.notes[i]._id === id) {
           return angular.copy(service.notes[i]);
         }
       }
     }
   }
-})();
+}
