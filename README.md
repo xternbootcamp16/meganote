@@ -1,4 +1,4 @@
-# meganote-1
+# Refactoring-meganote-practice
 An Angular 1.x note-taking app.
 
 * Cloned to practise refactoring AngularJS using [Angular Style Guide](https://github.com/johnpapa/angular-styleguide) 
