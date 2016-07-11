@@ -23,7 +23,13 @@
                 }
               );
           }
-
+          //Update Profile
+          update(user) {
+            return $http.put(`${apiURI}${user._id}`)
+              .then(
+                res => CurrentUser.set(res.data.user)
+              );
+          }
         }
         return new UsersService();
 
