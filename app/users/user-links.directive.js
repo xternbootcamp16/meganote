@@ -20,8 +20,13 @@
           controllerAs: 'vm',
           bindToController: true,
           template: `
-            <div class="user-links" ng-show="vm.signedIn()">
-              Signed in as {{ vm.user().name }}
+            <div class="user-links">
+              <span ng-show="vm.signedIn()">
+                Signed in as {{ vm.user().name }}
+              </span>
+              <span ng-show="!vm.signedIn()">
+                <a ui-sref="sign-up">Sign up for Meganote today!</a>
+              </span>
             </div>`,
         };
       }
