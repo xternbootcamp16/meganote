@@ -2,11 +2,17 @@
   angular.module('meganote.signIn')
     .directive('signIn', [
 
-      () => {
+      '$state',
+      'UsersService',
+      ($state, UsersService) => {
 
         class SignInController {
           submit() {
-            console.log('submitted');
+            var vm = this;
+            UsersService.login(vm.user)
+              .then(
+                () => $state.go('notes.form', { noteId: undefined })
+              );
           }
         }
 
