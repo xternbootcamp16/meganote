@@ -123,3 +123,6 @@ body .alert.alert-success {
 body .alert-danger {
   margin-top: 1rem;
 }
+a.profile {
+  color: #ccc;
+}
