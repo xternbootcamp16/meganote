@@ -25,6 +25,9 @@
             <span ng-show="vm.signedIn()">
               Signed in as {{ vm.user().name }}
             </span>
+            <span ng-show="!vm.signedIn()">
+              <a ui-sref="sign-up">Sign up for Meganote today!</a>
+            </span>
           </div>
 
           `
