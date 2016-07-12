@@ -47,6 +47,11 @@
                       required>
                   </p>
                   <input type="submit" name="commit" value="Save Changes" class="btn btn-default">
+                  <span class="login">
+                    <a ui-sref="notes.form({ noteId: undefined })">
+                      Back to my notes
+                    </a>
+                  </span>
                 </form>
               </div>
             </div>
