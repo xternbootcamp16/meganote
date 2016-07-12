@@ -43,7 +43,7 @@
     function destroy() {
       NotesService.destroy(vm.note)
         .then(
-          () => vm.clearForm()
+          () => $state.go('notes.form', { noteId: undefined })
         );
     }
   }
