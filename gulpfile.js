@@ -50,6 +50,7 @@
         presets: ['es2015']
       }))                                 // transpile into ES5 for browsers
       .pipe(concat('bundle.js'))          // concatenate all JS files
+      .pipe(uglify())
       .pipe(sourcemaps.write('.'))        // emit the .map file for debugging
       .pipe(gulp.dest('app/content'));
   }
@@ -60,6 +61,7 @@
       .pipe(plumber())
       .pipe(sourcemaps.init())
       .pipe(concat('vendor.js'))
+      .pipe(uglify())
       .pipe(sourcemaps.write('.'))
       .pipe(gulp.dest('app/content'));
   }
@@ -72,6 +74,10 @@
   }
 
   function watch() {
-    gulp.watch(['app/**/*', 'gulpfile.js'], ['bundle']);
+    gulp.watch([
+      'app/**/*',
+      'gulpfile.js',
+      '!app/content/bundle.*',
+      '!app/content/vendor.*'], ['bundle', 'vendor']);
   }
 })();
