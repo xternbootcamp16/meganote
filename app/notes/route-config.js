@@ -27,6 +27,9 @@
       data: {
         title: 'Notes'
       },
+      onExit: ['Flash', (Flash) => {
+        Flash.clear();
+      }],
     });
   }
 
