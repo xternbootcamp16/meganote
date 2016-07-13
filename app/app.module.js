@@ -24,5 +24,9 @@
     $rootScope.$on('$stateChangeSuccess', () => {
       $rootScope.$state = $state;
     });
+
+    $rootScope.$on('$stateChangeError', () => {
+      $state.go('sign-up');
+    });
   }
 }
