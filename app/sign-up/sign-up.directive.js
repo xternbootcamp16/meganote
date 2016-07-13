@@ -20,7 +20,7 @@
             UsersService.create(this.user)
               .then(
                 () => $state.go('notes.form', { noteId: undefined }),
-                
+
                 (res) => {
                   let errors = '';
                   for (let error of res.data.errors) {
@@ -40,7 +40,7 @@
           controller: SignUpController,
           controllerAs: 'vm',
           bindToController: true,
-          templateUrl: '/sign-up/sign-up.html',
+          templateUrl: 'sign-up/sign-up.html',
         };
       }
     ]);
