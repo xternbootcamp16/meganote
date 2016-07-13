@@ -2,7 +2,7 @@
   <div class="row">
     <div class="col-xs-6 col-xs-offset-4">
       <h3>Sign Up for Meganote</h3>
-      <form id="new_user" ng-submit="vm.submit()">
+      <form id="new_user" ng-submit="vm.submit()" novalidate>
         <p>
           <label for="name">Full Name</label><br>
           <input
@@ -41,6 +41,9 @@
           Already have an account?
           <a ui-sref="sign-in">Log in.</a>
         </span>
+        <flash-message
+          duration="0"
+          show-close="true"></flash-message>
       </form>
     </div>
   </div>
