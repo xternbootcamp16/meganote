@@ -36,9 +36,11 @@
             ng-model="vm.user.passwordConfirmation"
             required>
         </p>
-        <input type="submit" name="commit" value="Sign Up" class="btn btn-default">
+        <button type="submit" class="btn btn-default">
+          Sign Up <span ng-http-loader template="core/loader.html"></span>
+        </button>
         <span class="login">
-          Already have an account?
+          Been here before?
           <a ui-sref="sign-in">Log in.</a>
         </span>
         <flash-message

@@ -123,3 +123,7 @@ body .alert.alert-success {
 body .alert-danger {
   margin-top: 1rem;
 }
+.http-loader__wrapper {
+  display: inline-block;
+  vertical-align: middle;
+}
