@@ -9,8 +9,13 @@
     vm.clearForm = clearForm;
     vm.save = save;
     vm.destroy = destroy;
+    vm.refresh = refresh;
 
     /////////////////
+
+    function refresh() {
+      $scope.$parent.vm.refresh();
+    }
 
     function get() {
       if ($state.params.noteId) {
@@ -38,7 +43,7 @@
         vm.note.$save()
           .then(
             note => {
-              $scope.$parent.vm.refresh();
+              vm.refresh();
               vm.note = note;
               Flash.create('success', 'Saved!');
               $state.go('notes.form', { noteId: vm.note._id });
@@ -49,8 +54,11 @@
     }
 
     function destroy() {
-      // NotesService.destroy(vm.note)
-      //   .then(() => $state.go('notes.form', { noteId: undefined }));
+      vm.note.$delete({ id: vm.note._id })
+        .then(() => {
+          vm.refresh();
+          $state.go('notes.form', { noteId: undefined });
+        });
     }
   }
 }
