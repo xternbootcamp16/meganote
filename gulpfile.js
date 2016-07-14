@@ -95,8 +95,10 @@
   function watch() {
     gulp.watch([
       'app/**/*',
-      'gulpfile.js',
       '!app/content/bundle.*',
-      '!app/content/vendor.*'], ['bundle', 'vendor']);
+      '!app/content/vendor.*'
+    ], ['bundle', 'css']);
+
+    gulp.watch(['bower_components/**/*'], ['vendor', 'css']);
   }
 })();
