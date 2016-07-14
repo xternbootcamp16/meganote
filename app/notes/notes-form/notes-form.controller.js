@@ -30,14 +30,15 @@
 
     function save() {
       if (vm.note._id) {
-      //   NotesService.update(vm.note)
-      //     .then(
-      //       res => {
-      //         vm.note = angular.copy(res.data);
-      //         Flash.create('success', 'Saved!');
-      //       },
-      //       () => Flash.create('danger', 'Oops! Something went wrong.')
-      //     );
+        vm.note.$update({ id: vm.note._id })
+          .then(
+            note => {
+              vm.refresh();
+              vm.note = note;
+              Flash.create('success', 'Saved!');
+            },
+            () => Flash.create('danger', 'Oops! Something went wrong.')
+          );
       }
       else {
         vm.note.$save()
