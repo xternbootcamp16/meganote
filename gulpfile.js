@@ -8,6 +8,7 @@
   var babel = require('gulp-babel');
   var connect = require('gulp-connect');
   var uglify = require('gulp-uglify');
+  var cleanCSS = require('gulp-clean-css');
 
   gulp.task('bundle', bundle);
   gulp.task('vendor', vendor);
@@ -79,6 +80,7 @@
       .pipe(order(cssFiles, { base: './' }))
       .pipe(plumber())
       .pipe(sourcemaps.init())
+      .pipe(cleanCSS())
       .pipe(concat('bundle.css'))
       .pipe(sourcemaps.write('.'))
       .pipe(gulp.dest('app/content'));
