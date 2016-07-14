@@ -21,8 +21,8 @@
         NotesService.update(vm.note)
           .then(
             res => {
-              vm.note = angular.copy(res.data.note);
-              Flash.create('success', res.data.message);
+              vm.note = angular.copy(res.data);
+              Flash.create('success', 'Saved!');
             },
             () => Flash.create('danger', 'Oops! Something went wrong.')
           );
@@ -31,8 +31,8 @@
         NotesService.create(vm.note)
           .then(
             res => {
-              vm.note = res.data.note;
-              Flash.create('success', res.data.message);
+              vm.note = res.data;
+              Flash.create('success', 'Saved!');
               $state.go('notes.form', { noteId: vm.note._id });
             },
             () => Flash.create('danger', 'Oops! Something went wrong.')
@@ -42,9 +42,7 @@
 
     function destroy() {
       NotesService.destroy(vm.note)
-        .then(
-          () => $state.go('notes.form', { noteId: undefined })
-        );
+        .then(() => $state.go('notes.form', { noteId: undefined }));
     }
   }
 }
