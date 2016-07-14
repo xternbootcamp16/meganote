@@ -4,6 +4,7 @@
     'ngFlash',
     'textAngular',
     'ng.httpLoader',
+    'ngResource',
     'meganote.notes',
     'meganote.notesForm',
     'meganote.signUp',

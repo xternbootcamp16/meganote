@@ -13,7 +13,8 @@
     "font-awesome": "^4.6.3",
     "textAngular": "^1.5.1",
     "angular-flash-alert": "^2.3.0",
-    "angular-http-loader": "^0.1.7"
+    "angular-http-loader": "^0.1.7",
+    "angular-resource": "^1.5.7"
   },
   "resolutions": {
     "angular": "1.5.6"

@@ -35,7 +35,8 @@
     'bower_components/textAngular/dist/textAngular-rangy.min.js',
     'bower_components/textAngular/dist/textAngular-sanitize.min.js',
     'bower_components/textAngular/dist/textAngular.min.js',
-    'bower_components/angular-http-loader/app/package/js/angular-http-loader.min.js'
+    'bower_components/angular-http-loader/app/package/js/angular-http-loader.min.js',
+    'bower_components/angular-resource/angular-resource.min.js'
   ];
 
   var cssFiles = [
