@@ -2,8 +2,8 @@
   angular.module('meganote.notesForm')
     .controller('NotesFormController', NotesFormController);
 
-  NotesFormController.$inject = ['$state', 'Flash', 'Note'];
-  function NotesFormController($state, Flash, Note) {
+  NotesFormController.$inject = ['$scope', '$state', 'Flash', 'Note'];
+  function NotesFormController($scope, $state, Flash, Note) {
     const vm = this;
     vm.note = get();
     vm.clearForm = clearForm;
@@ -24,7 +24,7 @@
     }
 
     function save() {
-      // if (vm.note._id) {
+      if (vm.note._id) {
       //   NotesService.update(vm.note)
       //     .then(
       //       res => {
@@ -33,18 +33,19 @@
       //       },
       //       () => Flash.create('danger', 'Oops! Something went wrong.')
       //     );
-      // }
-      // else {
-      //   NotesService.create(vm.note)
-      //     .then(
-      //       res => {
-      //         vm.note = res.data;
-      //         Flash.create('success', 'Saved!');
-      //         $state.go('notes.form', { noteId: vm.note._id });
-      //       },
-      //       () => Flash.create('danger', 'Oops! Something went wrong.')
-      //     );
-      // }
+      }
+      else {
+        vm.note.$save()
+          .then(
+            note => {
+              $scope.$parent.vm.refresh();
+              vm.note = note;
+              Flash.create('success', 'Saved!');
+              $state.go('notes.form', { noteId: vm.note._id });
+            },
+            () => Flash.create('danger', 'Oops! Something went wrong.')
+          );
+      }
     }
 
     function destroy() {
