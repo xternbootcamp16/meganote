@@ -30,9 +30,7 @@
     }
 
     function create(note) {
-      const notesPromise = $http.post(apiURI, {
-        note: note
-      });
+      const notesPromise = $http.post(apiURI, note);
 
       notesPromise
         .then(res => service.notes.unshift(res.data));
@@ -41,9 +39,7 @@
     }
 
     function update(note) {
-      const notesPromise = $http.put(`${apiURI}${note._id}`, {
-        note: note
-      });
+      const notesPromise = $http.put(`${apiURI}${note._id}`, note);
 
       notesPromise
         .then(res => {
