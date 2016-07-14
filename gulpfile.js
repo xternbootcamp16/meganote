@@ -11,9 +11,10 @@
 
   gulp.task('bundle', bundle);
   gulp.task('vendor', vendor);
+  gulp.task('css', css);
   gulp.task('start-web-server', startWebServer);
   gulp.task('watch', watch);
-  gulp.task('default', ['bundle', 'vendor', 'start-web-server', 'watch']);
+  gulp.task('default', ['bundle', 'vendor', 'css', 'start-web-server', 'watch']);
 
   ////////////////////
 
@@ -35,6 +36,13 @@
     'app/bower_components/textAngular/dist/textAngular-sanitize.min.js',
     'app/bower_components/textAngular/dist/textAngular.min.js',
     'app/bower_components/angular-http-loader/app/package/js/angular-http-loader.min.js'
+  ];
+
+  var cssFiles = [
+    'app/bower_components/font-awesome/css/font-awesome.css',
+    'app/bower_components/bootstrap/dist/css/bootstrap.css',
+    'app/bower_components/textAngular/dist/textAngular.css',
+    'app/content/app.css'
   ];
 
   function bundle() {
@@ -62,6 +70,16 @@
       .pipe(sourcemaps.init())
       .pipe(concat('vendor.js'))
       .pipe(uglify())
+      .pipe(sourcemaps.write('.'))
+      .pipe(gulp.dest('app/content'));
+  }
+
+  function css() {
+    return gulp.src(cssFiles)
+      .pipe(order(cssFiles, { base: './' }))
+      .pipe(plumber())
+      .pipe(sourcemaps.init())
+      .pipe(concat('bundle.css'))
       .pipe(sourcemaps.write('.'))
       .pipe(gulp.dest('app/content'));
   }
