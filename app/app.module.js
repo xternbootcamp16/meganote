@@ -26,7 +26,7 @@
     });
 
     $rootScope.$on('$stateChangeError', () => {
-      $state.go('sign-up');
+      $state.go('sign-in');
     });
   }
 }
