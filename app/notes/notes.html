@@ -4,8 +4,16 @@
       <button class="btn btn-default" ui-sref="notes.form({ noteId: undefined })">
         New Note
       </button>
+      <form>
+        <div class="form-group">
+          <div class="input-group">
+            <input type="text" class="form-control" placeholder="Search" ng-model="vm.searchTerm">
+            <div class="input-group-addon"><i class="fa fa-search"></i></div>
+          </div>
+        </div>
+      </form>
       <ul id="notes">
-        <li ng-repeat="note in vm.notes | orderBy: '-updated_at' track by $index">
+        <li ng-repeat="note in vm.notes | orderBy: '-updated_at' | filter:vm.searchTerm track by $index">
           <a class="note" ui-sref="notes.form({ noteId: note._id })">
             <div class="note-title">{{ note.title }}</div>
             <div class="note-body" ng-bind-html="note.body_html"></div>
