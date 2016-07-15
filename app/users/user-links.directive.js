@@ -30,7 +30,7 @@
             <span ng-show="vm.signedIn()">
               <a ui-sref="user-profile">Signed in as {{ vm.user().name }}</a>
               |
-              <a ui-sref="sign-up" ng-click="vm.logout()">Logout</a>
+              <a ui-sref="sign-in" ng-click="vm.logout()">Logout</a>
             </span>
             <span ng-show="!vm.signedIn()">
               <a ui-sref="sign-up">Sign up for Meganote today!</a>

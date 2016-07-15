@@ -3,16 +3,31 @@
     'ui.router',
     'ngFlash',
     'textAngular',
+    'ng.httpLoader',
+    'ngResource',
     'meganote.notes',
     'meganote.notesForm',
     'meganote.signUp',
     'meganote.signIn',
     'meganote.users'
   ])
-    .config(config);
+    .config(config)
+    .run(run);
 
-  config.$inject = ['$urlRouterProvider'];
-  function config($urlRouterProvider) {
+  config.$inject = ['$urlRouterProvider', 'httpMethodInterceptorProvider'];
+  function config($urlRouterProvider, httpMethodInterceptorProvider) {
     $urlRouterProvider.otherwise('/notes/');
+    httpMethodInterceptorProvider.whitelistDomain('localhost');
+  }
+
+  run.$inject = ['$rootScope', '$state'];
+  function run($rootScope, $state) {
+    $rootScope.$on('$stateChangeSuccess', () => {
+      $rootScope.$state = $state;
+    });
+
+    $rootScope.$on('$stateChangeError', () => {
+      $state.go('sign-in');
+    });
   }
 }

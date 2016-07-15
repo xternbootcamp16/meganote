@@ -54,7 +54,7 @@ input#note_title {
 
 ul#notes {
   overflow-y: scroll;
-  height: calc(100vh - 110px);
+  height: calc(100vh - 155px);
   list-style: none;
   margin-top: 1em;
   padding: 0;
@@ -121,5 +121,12 @@ body .alert.alert-success {
   background-color: inherit;
 }
 body .alert-danger {
+  margin-top: 1rem;
+}
+.http-loader__wrapper {
+  display: inline-block;
+  vertical-align: middle;
+}
+#sidebar form {
   margin-top: 1rem;
 }

@@ -33,6 +33,7 @@
                     <input
                       type="text"
                       name="username"
+                      focus-on
                       ng-model="vm.user.username"
                       required>
                   </p>
