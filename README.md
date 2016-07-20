@@ -24,6 +24,29 @@ git clone <this repository>
 cd <this project folder>
 npm start
 '''
+## Getting Started
+
+> Meganote uses NPM to manage development dependencies, so install
+[Node](https://nodejs.org/en/) if necessary
+
+To get started, clone the repository and run `npm start`.
+
+```
+git clone https://github.com/KennethofTam/meganote-2
+cd meganote-2
+npm start
+```
+This will install dependencies and start with a web server on port 8000
+
+To change the URL of the API (`localhost:3030` by default),
+edit `app/constants.js`
+
+## Deployment
+
+To deploy Meganote, copy the contents of the `app` folder to your remote server.
+
+### [Live Example] (http://bootcamp16.getfretless.com/meganote/#/sign-up)
+
 
 This will start a web server on port 8000.
 
