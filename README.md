@@ -32,7 +32,7 @@ npm start
 To get started, clone the repository and run `npm start`.
 
 ```
-git clone https://github.com/KennethofTam/meganote-2
+
 cd meganote-2
 npm start
 ```
@@ -45,7 +45,7 @@ edit `app/constants.js`
 
 To deploy Meganote, copy the contents of the `app` folder to your remote server.
 
-### [Live Example] (http://bootcamp16.getfretless.com/meganote/#/sign-up)
+## [Example] (http://bootcamp16.getfretless.com/meganote/#/sign-up)
 
 
 This will start a web server on port 8000.
