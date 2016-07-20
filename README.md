@@ -32,8 +32,8 @@ npm start
 To get started, clone the repository and run `npm start`.
 
 ```
-
-cd meganote-2
+clone https://github.com/kushp44/meganote
+cd meganote
 npm start
 ```
 This will install dependencies and start with a web server on port 8000
